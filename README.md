@@ -23,5 +23,13 @@ y ha hecho que el crecimiento de la empresa no sea el esperado.
 
 ## Alcance 
 
+-El sistema de información debe ser eficiente y funcional, para solucionar el problema con el que se cuenta la empresa actualmente.
+-Los administradores serán los únicos que podrán ver y modificar la información de las ventas, compras, inventario, pedidos.
+-Los clientes solo podrán ver los productos disponibles y podrán hacer sus pedidos.
+
 ## Integrantes 
 
+- Ivan Jimenez
+- Maxiel Martinez
+- Ederson Ramirez
+- Wirley Valencia
