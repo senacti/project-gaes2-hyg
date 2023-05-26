@@ -1,4 +1,6 @@
 # Repositorio proyecto H&G Valencia
+![LogoAzul-removebg-preview](https://github.com/senauti/project-gaes2-hyg/assets/127152289/87678ca8-bb95-4cb0-a9d7-1789c40d6df4)
+
 
 ## Objetivo general 
 
