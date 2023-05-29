@@ -12,14 +12,14 @@
 <body class="body">
     <header id="header">
         <div class="logo">
-            <img class="imgLogo" src="./Iconos/image-removebg-preview.png" alt="Logo Empresa">
+            <img class="imgLogo" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
         </div>
         <nav class="nav-links">
             <ul class="menu-horizontal">
-                <li> <a id="link" href="#">HOME</a> </li>
-                <li> <a id="link" href="./Nosotros.html">NOSOTROS</a> </li>
-                <li> <a id="link" href="./Contacto.html">CONTACTO</a> </li>
-                <li> <a id="link" href="./Inicio de sesion/InicioCliente.html">INICIO DE SESION</a></li>
+            <li> <a id="link" href="{{ url('/index') }}">HOME</a> </li>
+                <li> <a id="link" href="{{ url('/Nosotros') }}">NOSOTROS</a> </li>
+                <li> <a id="link" href="{{ url('/Contacto') }}">CONTACTO</a> </li>
+                <li> <a id="link" href="{{ url('/InicioCliente') }}">INICIO DE SESION</a></li>
                 <form id="Buscar" class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                     <button class="btn btn-outline-dark" type="submit">Search</button>
@@ -37,12 +37,12 @@
             </section>
             <div class="comprar">
                 
-                <button onclick="location.href='./Catalogo/Catalogo.html'">CATALOGO</button>
+                <button onclick="location.href={{ url('/Catalogo') }}">CATALOGO</button>
                 
             </div>
         </div>
     
-        <img class="img-right"  src="./Iconos/imgIndexClara.PNG" alt="">
+        <img class="img-right"  src="{{ asset('Iconos/imgIndexClara.PNG') }}" alt="">
     </main>
     
     

@@ -13,14 +13,14 @@
 <body class="bodyS" id="bodyS">
     <header id="header">
         <div class="logo">
-            <img class="imgLogo" src="./Iconos/image-removebg-preview.png" alt="Logo Empresa">
+            <img class="imgLogo" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
         </div>
         <nav class="nav-links">
             <ul class="menu-horizontal">
-                <li> <a id="link" href="./index.html">HOME</a> </li>
-                <li> <a id="link" href="#">NOSOTROS</a> </li>
-                <li> <a id="link" href="./Contacto.html">CONTACTO</a> </li>
-                <li> <a id="link" href="./Inicio de sesion/InicioCliente.html">INICIO DE SESION</a></li>
+            <li> <a id="link" href="{{ url('/index') }}">HOME</a> </li>
+                <li> <a id="link" href="{{ url('/Nosotros') }}">NOSOTROS</a> </li>
+                <li> <a id="link" href="{{ url('/Contacto') }}">CONTACTO</a> </li>
+                <li> <a id="link" href="{{ url('/InicioCliente') }}">INICIO DE SESION</a></li>
                 <form id="Buscar" class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                     <button class="btn btn-outline-dark" type="submit">Search</button>
@@ -37,7 +37,7 @@
             Somos una tienda de abarrotes familiar, donde nos enfocamos en ofrecer productos de alta calidad a precios accesibles. Encontrarás todo lo que necesitas para tu hogar, desde alimentos básicos como arroz, frijoles, harina y azúcar, hasta productos de limpieza, cuidado personal y productos para tu mascota.
         </p>
         <div>
-            <img src="./Iconos/comida.png" alt="">
+            <img src="{{ asset('Iconos/comida.png') }}" alt="">
         </div>
     </main>
     <!-- Boostrap -  -->

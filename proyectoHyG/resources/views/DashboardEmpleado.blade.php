@@ -12,19 +12,19 @@
 <body> 
     <header id="header">
         <div class="icono-menu">
-            <img src="./../Iconos/HamburguerSinFondo.png" id="icono-menu">
+            <img src="{{ asset('Iconos/HamburguerSinFondo.png') }}" id="icono-menu">
         </div>
         <div class="logo-verde">
-            <img id="logo" class="icono-menu" src="./../Iconos/image-removebg-preview.png" alt="Logo Empresa">
+            <img id="logo" class="icono-menu" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
         </div>
         <nav class="notify">
-            <a href="./../index.html">
-                <img src="./../Iconos/notifyAzul.jpg" alt="Notify">
+            <a href="{{ url('/index') }}">
+                <img src="{{ asset('Iconos/notifyAzul.jpg') }}" alt="Notify">
             </a> 
         </nav>
         <nav class="user">
-            <a href="./../index.html">
-                <img src="./../Iconos/iconoEmp.png" alt="User-ico">
+            <a href="{{ url('/index') }}">
+                <img src="{{ asset('Iconos/iconoEmp.png') }}" alt="User-ico">
             </a> 
         </nav>
         <div class="cont-menu active" id="menu">
@@ -32,7 +32,7 @@
                 <li>
                      <strong>GESTIONAR VENTAS</strong> 
                     <ul>
-                        <li><a href="./../Errores/Pconstrucción.html">Registrar Ventas</a> </li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Registrar Ventas</a> </li>
                       
                     </ul>
                 </li>
@@ -40,25 +40,25 @@
                      <strong>GESTIONAR COMPRAS</strong> 
                     <ul>
                         
-                        <li><a href="./../Errores/Pconstrucción.html">Ordenes de Compra</a></li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Ordenes de Compra</a></li>
                         
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR INVENTARIO</strong>
                     <ul>
-                        <li><a href="./../Errores/Pconstrucción.html">Ver Inventario </a></li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Ver Inventario </a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR PEDIDOS</strong>
                     <ul>
-                        <li><a href="./../Errores/Pconstrucción.html">Ver Pedidos</a> </li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Ver Pedidos</a> </li>
                     </ul>
                 </li>
             </ul>
         </div>
     </header>
-    <script src="appAdmin.js"></script>
+    <script src="{{ asset('js/appAdmin.js') }}"></script>
 </body>
 </html>

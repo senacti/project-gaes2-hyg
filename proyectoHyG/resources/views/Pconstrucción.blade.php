@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pagina construcción</title>
-    <link rel="stylesheet" href="{{ asset('StyleER.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/StyleER.css') }}">
 </head>
 <body class="bodyC">
     <header id="header">
         <div class="logo">
-            <img class="imgLogo" src="./../Iconos/image-removebg-preview.png" alt="Logo Empresa">
+            <img class="imgLogo" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
         </div>
     </header>
 <main class="main">
@@ -20,12 +20,12 @@
         <p class="linea1">Estamos trabajando para mejorar</p>
 </section>
 <section class="img404">
-    <img src="./../Iconos/bobC.png" alt="Icono 404">   
+    <img src="{{ asset('Iconos/bobC.png') }}" alt="Icono 404">   
 </section>
     
 <div class="comprar">
     <button>
-        <a href="./../index.html">REGRESAR</a>
+        <a href="{{ url('/index') }}">REGRESAR</a>
     </button>
 </div>
 </main>

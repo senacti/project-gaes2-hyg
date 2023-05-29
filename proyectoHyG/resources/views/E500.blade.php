@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error500</title>
-    <link rel="stylesheet" href="{{ asset('StyleER.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/StyleER.css') }}">
      <!-- Boostrap ---> 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
 </head>
 <body class="bodyE">
     <header id="header">
         <div class="logo">
-            <img class="imgLogo" src="./../Iconos/image-removebg-preview.png" alt="Logo Empresa">
+            <img class="imgLogo" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
         </div>
     </header>
 <main class="main-Error500">
 <section class="img500">
-    <img src="./../Iconos/500.png" alt="Icono 500">   
+    <img src="{{ asset('Iconos/500.png') }}" alt="Icono 500">   
 </section>
     
 <section class="s1" >

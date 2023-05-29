@@ -12,14 +12,14 @@
 <body class="bodyS" id="bodyS">
     <header id="header">
         <div class="logo">
-            <img class="imgLogo" src="./Iconos/image-removebg-preview.png" alt="Logo Empresa">
+            <img class="imgLogo" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
         </div>
         <nav class="nav-links">
             <ul class="menu-horizontal">
-                <li> <a id="link" href="./index.html">HOME</a> </li>
-                <li> <a id="link" href="./Nosotros.html">NOSOTROS</a> </li>
-                <li> <a id="link" href="#">CONTACTO</a> </li>
-                <li> <a id="link" href="./Inicio de sesion/InicioCliente.html">INICIO DE SESION</a></li>
+            <li> <a id="link" href="{{ url('/index') }}">HOME</a> </li>
+                <li> <a id="link" href="{{ url('/Nosotros') }}">NOSOTROS</a> </li>
+                <li> <a id="link" href="{{ url('/Contacto') }}">CONTACTO</a> </li>
+                <li> <a id="link" href="{{ url('/InicioCliente') }}">INICIO DE SESION</a></li>
                 <form id="Buscar" class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                     <button class="btn btn-outline-dark" type="submit">Search</button>
@@ -35,19 +35,19 @@
     <main class="main-contactos row">
         <!-- <div class="col-1"></div> -->
         <section class="col-4 text-center">
-            <img src="./Iconos/Ubicacion.png" alt="Icono ubicacion">
+            <img src="{{ asset('Iconos/Ubicacion.png') }}" alt="Icono ubicacion">
             <p>Carrera 88h # 71-63 sur</p>
             <p>Barrio Bosa San Antonio</p>
             <p>Bogotá D.C</p>
         </section>
         <section class="col-4 text-center">
-            <img src="./Iconos/telefono.png" alt="Icono telefono">
+            <img src="{{ asset('Iconos/telefono.png') }}" alt="Icono telefono">
                 <p>318 838 1712</p>
                 <p>317 741 4195</p>
         </section>
         </section>
         <section class="col-4 text-center">
-            <img src="./Iconos/gmail.png" alt="Icono correo">
+            <img src="{{ asset('Iconos/gmail.png') }}" alt="Icono correo">
             <p>Harinasygranosvalencia <br> @gmail.com
             </p>
         </section>

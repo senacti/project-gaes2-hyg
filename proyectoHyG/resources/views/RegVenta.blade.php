@@ -13,19 +13,19 @@
 <body> 
     <header id="header">
         <div class="icono-menu">
-            <img src="./../Iconos/HamburguerSinFondo.png" id="icono-menu">
+            <img src="{{ asset('Iconos/HamburguerSinFondo.png') }}" id="icono-menu">
         </div>
         <div class="logo-verde">
-            <img id="logo" class="icono-menu" src="./../Iconos/image-removebg-preview.png" alt="Logo Empresa">
+            <img id="logo" class="icono-menu" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
         </div>
         <nav class="notify">
-            <a href="./../index.html">
-                <img src="./../Iconos/notifyAzul.jpg" alt="Notify">
+            <a href="{{ url('/index') }}">
+                <img src="{{ asset('Iconos/notifyAzul.jpg') }}" alt="Notify">
             </a> 
         </nav>
         <nav class="user">
-            <a href="./../index.html">
-                <img src="./../Iconos/iconoAdmin.jpg" alt="User-ico">
+            <a href="{{ url('/index') }}">
+                <img src="{{ asset('Iconos/iconoAdmin.jpg') }}" alt="User-ico">
             </a> 
         </nav>
         <div class="cont-menu active" id="menu">
@@ -33,28 +33,28 @@
                 <li>
                      <strong>GESTIONAR VENTAS</strong> 
                     <ul>
-                        <li><a href="./../FormulariosAdmin/RegVenta.html"> Registrar Ventas</a> </li>
-                        <li><a href="./../Errores/Pconstrucción.html">Informe de Ventas </a> </li>
+                        <li><a href="{{ url('/RegVenta') }}"> Registrar Ventas</a> </li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Informe de Ventas </a> </li>
                     </ul>
                 </li>
                 <li>
                      <strong>GESTIONAR COMPRAS</strong> 
                     <ul>
-                        <li><a href="./../Errores/Pconstrucción.html">Ver Proveedores </a> </li>
-                        <li> <a href="./../FormulariosAdmin/RegistCompra.html">Registrar Compra </a></li>
-                        <li><a href="./../Errores/Pconstrucción.html">Detalles de la Compra </a></li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Ver Proveedores </a> </li>
+                        <li> <a href="{{ url('/RegistCompra') }}">Registrar Compra </a></li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Detalles de la Compra </a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR INVENTARIO</strong>
                     <ul>
-                        <li> <a href="./../FormulariosAdmin/Inventario.html">Ver Inventario </a></li>
+                        <li> <a href="{{ url('/Inventario') }}">Ver Inventario </a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR PEDIDOS</strong>
                     <ul>
-                        <li><a href="./../FormulariosAdmin/Pedidos.html">Ver Pedidos </a></li>
+                        <li><a href="{{ url('/Pedidos') }}">Ver Pedidos </a></li>
                     </ul>
                 </li>
             </ul>
@@ -215,7 +215,7 @@
         
     </main>
     <!-- Scripts -->
-    <script src="validacionFormularios.js"></script>
-    <script src="appCompras.js"></script>
+    <script src="{{ asset('js/validacionFormularios.js') }}"></script>
+    <script src="{{ asset('js/appCompras.js') }}"></script>
     <!-- Boostrap -  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
