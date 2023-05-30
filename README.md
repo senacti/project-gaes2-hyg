@@ -22,7 +22,7 @@ A su vez no se proporciona un valor agregado al cliente que lo incentive a escog
 y ha hecho que el crecimiento de la empresa no sea el esperado.
 
 ## Justificación 
-El proyecto
+La microempresa según lo planteado en el problema necesita un sistema de información que les permita tener más organizada la información, optimizar el tiempo y hacer más fácil la organización de esta información. También para que esta información sea más completa y efectiva.
 
 ## Alcance 
 
