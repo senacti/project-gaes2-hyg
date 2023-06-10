@@ -32,16 +32,17 @@
 
 .logo {
     cursor: pointer;
+    margin-right: 14%;
 }
 
 
-.imgLogo{
+.img-fluid{
     height: 100px;
     width: auto;
     transition: all 0.3s;
 }
 
-.imgLogo:hover{
+.img-fluid:hover{
     transform:scale(1.2) ;
 }
 
@@ -123,4 +124,9 @@ footer{
     background-color: rgb(255, 255, 255);
     height: 100px;
 }
-
+#header{
+    background-color: rgb(255, 255, 255) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 3%;}
