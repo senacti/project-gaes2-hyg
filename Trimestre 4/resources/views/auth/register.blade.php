@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Registro</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
     <link href="{{ asset('css/styleRegistro.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
 <header id="header">
         <div class="logo">
             <img src="{{ asset('Iconos/image-removebg-preview.png')}}" class="img-fluid" alt="Logo empresa">
@@ -23,127 +23,81 @@
             <h1>Formulario de registro de Cliente</h1>
         </nav>
 </header>
-    <main>
-        <form class="container needs-validation" novalidate>
-            <!-- nombres y apellidos -->
-            <div class="row">
-                <div class="col-6">
-                    <label for="nombres" class="email-imput">Nombres</label>
-                </div>
-                <div class="col-6">
-                    <label for="apellidos">Apellidos</label>
-                </div>
+<main>
+<form method="post" action="{{ route('register') }}" class="container needs-validation" novalidate >
+    @csrf
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline"> 
+            <label class="form-label" for="form3Example1">Nombres</label>
+              <input type="text" name="name" id="form3Example1" class="form-control" placeholder="Ingrese su nombre" />
+             
             </div>
-            <div class="row">
-                <div class="col-6">
-                    <input id="inputs" class="controls form-control" type="text" name="nombres" id="nombre" placeholder="Escriba su nombre" required>
-                    <div class="invalid-feedback">
-                        Campo obligatorio
-                    </div>
-                </div>
-                <div class="col-6">
-                    <input id="inputs" class="controls form-control" type="text" name="apellidos" id="apellido" placeholder="Escriba su apellido" required>
-                    <div class="invalid-feedback">
-                        Campo obligatorio
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline"> 
+                <label class="form-label" for="form3Example2">Apellidos</label>
+              <input type="text" name="last name" id="form3Example2" class="form-control" placeholder="Ingrese sus apellidos" />
+             
             </div>
-            <!-- correo y direccion -->
-            <div class="row" action="">
-                <div class="col-6">
-                    <label for="correo" class="email-imput">Correo</label>
-                </div>
-                <div class="col-6">
-                    <label for="direccion">Direccion</label>
-                </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="form-outline"> 
+              <label class="form-label" for="form3Example1">Correo</label>
+                <input type="email" name="email" id="form3Example1" class="form-control" placeholder="Ingrese su correo" />
+               
+              </div>
             </div>
-            <div class="row" action="">
-                <div class="col-6">
-                    <input id="inputs" class="controls form-control" type="email" name="correo" id="correo" placeholder="Escriba su correo" required>
-                    <div class="invalid-feedback">
-                        Ingrese un correo valido usando @
-                    </div>
-                </div>
-                <div class="col-6">
-                    <input id="inputs" class="controls form-control" type="text" name="direccion" id="direccion" placeholder="Escriba su direccion" required>
-                    <div class="invalid-feedback">
-                        Por favor ingrese la dirección de su domicilio
-                    </div>
-                </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline"> 
+                  <label class="form-label" for="form3Example2">Direccion</label>
+                <input type="text" name="address" id="form3Example2" class="form-control" placeholder="Ingrese su direccion" />
+               
+              </div>
             </div>
-            <!-- celular y telefono -->
-            <div class="row" action="">
-                <div class="col-6">
-                    <label for="celular" class="email-imput">Celular</label>
-                </div>
-                <div class="col-6">
-                    <label for="telefono">Telefono</label>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="form-outline"> 
+              <label class="form-label" for="form3Example1">Celular</label>
+                <input type="number" name="celular" id="form3Example1" class="form-control" placeholder="Ingrese su numero de celular" />
+               
+              </div>
             </div>
-            <div class="row" action="">
-                <div class="col-6">
-                    <input id="inputs" class="controls form-control" type="number" name="celular" id="celular" placeholder="Ingrese su numero de celular" required>
-                    <div class="invalid-feedback">
-                        Numero celular es requerido
-                    </div>
-                </div>
-                <div class="col-6">
-                    <input id="inputs" class="controls" type="number" name="telefono" id="telefono" placeholder="   Ingrese numero telefonico" >
-                    <div class="invalid-feedback">
-                        Escriba su numero telefonico
-                    </div>
-                </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline"> 
+                  <label class="form-label" for="form3Example2">Telefono</label>
+                <input type="number" name="telefono" id="form3Example2" class="form-control" placeholder="Ingrese su numero de telefono" />
+               
+              </div>
             </div>
-            <!-- contraseña y confirmar contraseña -->
-            <div class="row" action="">
-                <div class="col-6">
-                    <label for="contraseña" class="email-imput">contraseña</label>
-                </div>
-                <div class="col-6">
-                    <label for="confirmar-contraseña">Confirmar contraseña</label>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="form-outline"> 
+              <label class="form-label" for="form3Example1">contraseña</label>
+                <input type="password" name="password" id="form3Example1" class="form-control" placeholder="Ingrese su nombre" />
+               
+              </div>
             </div>
-            <div class="row" action="">
-                <div class="col-6">
-                    <input id="inputs" class="controls form-control" type="password" name="contraseña" id="contraseña" placeholder="Escriba su contraseña" required>
-                    <div class="invalid-feedback">
-                        Contraseña requerida
-                    </div>
-                </div>
-                <div class="col-6">
-                    <input id="inputs" class="controls form-control" type="password" name="confirmar-contraseña" id="confirmar-contraseña" placeholder="Confirmar contraseña" required>
-                    <div class="invalid-feedback">
-                        Ingrese su contraseña nuevamente
-                    </div>
-                </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline"> 
+                  <label class="form-label" for="form3Example2">confirmar contraseña</label>
+                <input type="password" name="password_confirmation" id="form3Example2" class="form-control" placeholder="Ingrese sus apellidos" />
+               
+              </div>
             </div>
-            <!-- genero -->
-            <div class="row" action="">
-                <div class="col-6" id="input-masculino">
-                    <label for="genero" class="email-imput"><img  class="generos" src="./../Iconos/masculino.jpg" alt="masculino"></label>
-                </div>
-                <div class="col-6" id="input-femenino">
-                    <label for="genero"><img class="generos" src="./../Iconos/femenino.jpg" alt="femenino"></label>
-                </div>
-            </div>
-            <div class="row" action="">
-                <div class="col-6" id="checkbox-masculino">
-                    <input type="radio" name="genero" id="Generos" required> 
-                    <!-- <input class="controls" type="checkbox" name="genero" id="masculino" > -->
-                </div>
-                <div class="col-6" id="checkbox-femenino" >
-                    <input type="radio" name="genero" id="Generos" required>
-                    <!-- <input class="controls" type="checkbox" name="genero" id="femenino"> -->
-                </div>
-            </div>
-            <!-- boton de registrar -->
-            <div class="row" id="input">
-                <div class="col-9"></div>
-                <input class="col-3" id="registrar" type="submit" value="Registrar ">
-            </div>
-        </form>
-       
-    </main>
+          </div>
+
+          <div class="text-center pt-1 mb-5 pb-1">
+
+            <button class="btn btn-primary btn-lg" type="submit">REGISTRAR</button>
+          
+        </div>
+      </form>
     <script src="validacionRegistros.js"></script>
     <!-- Boostrap -  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
@@ -152,6 +106,7 @@
     <!-- place footer here -->
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
+  <script src="{{ asset('js/validacionRegistros.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
