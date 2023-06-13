@@ -26,7 +26,7 @@ class LoginRegisterController extends Controller
      */
     public function register()
     {
-        return view('registroCliente');
+        return view('auth.register');
     }
 
     /**
