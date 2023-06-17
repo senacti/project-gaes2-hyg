@@ -7,10 +7,10 @@
     <title>Inventario</title>
     <link rel="stylesheet" href="{{ asset('css/RegCompra.css') }}">
     <link rel="stylesheet" href="{{ asset('css/RegVentaEinventario.css') }}">
-    <!-- Boostrap ---> 
+    <!-- Boostrap --->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body> 
+<body>
     <header id="header">
         <div class="icono-menu">
             <img src="{{ asset('Iconos/HamburguerSinFondo.png') }}" id="icono-menu">
@@ -21,24 +21,24 @@
         <nav class="notify">
             <a href="{{ url('/index') }}">
                 <img src="{{ asset('Iconos/notifyAzul.jpg') }}" alt="Notify">
-            </a> 
+            </a>
         </nav>
         <nav class="user">
             <a href="{{ url('/index') }}">
                 <img src="{{ asset('Iconos/iconoAdmin.jpg') }}" alt="User-ico">
-            </a> 
+            </a>
         </nav>
         <div class="cont-menu active" id="menu">
             <ul class="ul-pading">
                 <li>
-                     <strong>GESTIONAR VENTAS</strong> 
+                     <strong>GESTIONAR VENTAS</strong>
                     <ul>
                         <li><a href="{{ url('/RegVenta') }}"> Registrar Ventas</a> </li>
                         <li><a href="{{ url('/Pconstrucción') }}">Informe de Ventas</a>  </li>
                     </ul>
                 </li>
                 <li>
-                     <strong>GESTIONAR COMPRAS</strong> 
+                     <strong>GESTIONAR COMPRAS</strong>
                     <ul>
                         <li><a href="{{ url('/Pconstrucción') }}">Ver Proveedores </a> </li>
                         <li><a href="{{ url('/RegistCompra') }}">Registrar Compra </a></li>
@@ -80,11 +80,11 @@
                     </div>
                     <div class="col-3">
                         <input class="peque controls form-control" type="search" name="apellidos" id="grande" placeholder="SELECCIONAR CATEGORÍA" required>
-                        
+
                     </div>
                     <div class="col-1"></div>
                     <div class="div-boton col-2 d-flex justify-content-center align-items-center">
-                        <input value="AGREGAR" class="boton controls" type="submit" name="apellidos" id="apellido" required>
+                        <input value="AGREGAR" class="boton controls" type="submit" name="agregar" id="apellido" required>
                     </div>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                     </tbody>
                   </table>
             </div>
-            
+
               <!-- Cuarta sección -->
             <div class="contenedor-4">
                 <div class="form-4 row" action="">
@@ -172,7 +172,7 @@
                 </div>
             </div>
         </form>
-        
+
     </main>
     <!-- Scripts -->
     <script src="{{ asset('js/validacionFormularios.js') }}"></script>
