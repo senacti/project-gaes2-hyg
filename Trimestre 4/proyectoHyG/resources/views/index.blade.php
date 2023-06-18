@@ -16,7 +16,6 @@
 
                 </div>
             </div>
-
             <img class="img-right"  src="{{ asset('Iconos/imgIndexClara.PNG') }}" alt="">
         </main>
     @endsection
