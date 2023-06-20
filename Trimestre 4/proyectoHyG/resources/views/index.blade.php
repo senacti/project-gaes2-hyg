@@ -1,56 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- Boostrap ---> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-<body class="body">
-    <header id="header">
-        <div class="logo">
-            <img class="imgLogo" src="{{ asset('Iconos/image-removebg-preview.png') }}" alt="Logo Empresa">
-        </div>
-        <nav class="nav-links">
-            <ul class="menu-horizontal">
-            <li> <a id="link" href="{{ url('/index') }}">HOME</a> </li>
-                <li> <a id="link" href="{{ url('/Nosotros') }}">NOSOTROS</a> </li>
-                <li> <a id="link" href="{{ url('/Contacto') }}">CONTACTO</a> </li>
-                <li> <a id="link" href="{{ url('/InicioCliente') }}">INICIO DE SESION</a></li>
-                <form id="Buscar" class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-dark" type="submit">Search</button>
-                </form>
-            </ul>
-        </nav>
-    </header>
-    <main class="">
-        <div class="">
-            <section class="mercado">
-                <div>
-                    <h1 class="h1-mercado">MERCADO</h1>
-                    <P>AL ALCANCE <br> DE TUS MANOS</P>
+@extends('layouts.inicio')
+@section('content')
+
+
+
+    <main  class="container-fluid">
+            </nav>
+            <div class="container hero">
+                <div class="row" id="mercado">
+                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                        <h1 class="display-2 ">MERCADO</h1>
+                        <p class="fs-2">AL ALCANCE <br> DE TUS MANOS</p>
+                        <a
+                            class="btn btn-light btn-lg action-button" href="{{url("/Catalogo")}}">CATALOGO<i class="fa fa-long-arrow-right ml-2"></i></a>
+                    </div>
+                    <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+                        <div class="iphone-mockup">
+						<img class="device" src="{{ asset('Iconos/img_index.png') }}">
+                        
+                          <!--  <div class="screen">
+							</div>
+							
+							-->
+                        </div>
+                    </div>
                 </div>
-            </section>
-            <div class="comprar">
-                
-                <button onclick="location.href={{ url('/Catalogo') }}">CATALOGO</button>
-                
             </div>
         </div>
-    
-        <img class="img-right"  src="{{ asset('Iconos/imgIndexClara.PNG') }}" alt="">
+    </div>
     </main>
-    
     
 
     <!-- Boostrap -  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
-<footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>  
+@endsection
 
-</footer>
-</html>
+
+

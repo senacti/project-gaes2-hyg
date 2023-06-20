@@ -28,6 +28,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 3%;
+    
 }
 
 .logo {
@@ -36,24 +37,22 @@
 }
 
 
-.imgLogo{
+#imglogo{
     height: 100px;
     width: auto;
     transition: all 0.3s;
 }
 
-.imgLogo:hover{
+#imglogo:hover{
     transform:scale(1.2) ;
 }
 
-.nav-links{
-    list-style: none;
+.nav-link{
+ color: black;
+  font-size: 20px;
 }
 
-.nav-links li{
-    display: inline;
-    padding: 0 20px;
-}
+
 
 .menu-horizontal{
 
@@ -92,11 +91,13 @@
     display: block;
 }
 
-.mercado{
+#mercado{
     /* background-color: blue; */
     width: 100%;
-    padding: 150px;
-    height: 600px;
+    padding: 80px;
+    height: 400px;
+    margin-left: -100px;
+    margin-top: 9%;
 }
 
 .h1-mercado{
@@ -145,11 +146,11 @@ main{
     display: flex;
     justify-content: space-around;
     background-color: #d3e1eb;
-    background-image: url(./Iconos/canastaClara.PNG);
+
     background-repeat: no-repeat;
     background-position: 100px ;
     background-size: 650px;
-    height: 800px;
+    height: 720px;
 
 }
 
@@ -175,4 +176,23 @@ form img{
 .productos{
     text-decoration: none;
     color: black;
+}
+
+
+.h1-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1-title h1{
+    padding-top: 20px;
+    font-size: 120px;
+    font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+}
+.device{
+    margin-left:  100px;
+    width: 700px;
+    height: 600px;
+    margin-top: -22%;
 }
