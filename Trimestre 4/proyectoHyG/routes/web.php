@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\inventarioController;
+use App\Http\Controllers\ventaController;
+use App\Http\Controllers\compraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/catalogo', function () {
     return view('Catalogo');
 });
@@ -40,7 +41,7 @@ Route::get('/error404', function () {
 Route::get('/error500', function () {
     return view('E500');
 });
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 Route::get('/InicioCliente', function () {
@@ -76,8 +77,15 @@ Route::get('/RegVenta', function () {
 Route::get('/resgistroEmpleado', function () {
     return view('resgistroEmpleado');
 });
+Route::get('/loginF', function () {
+    return view('loginF');
+});
 
 
 Auth::routes();
-
+Route::get('home/pdf', [InventarioController::class, 'pdf'])->name('home');
+Route::get('ventas/pdf', [VentaController::class, 'pdf'])->name('ventas.pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('home', inventarioController::class);
+Route::resource('ventas', ventaController::class);
+Route::resource('compras', compraController::class);
