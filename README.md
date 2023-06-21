@@ -22,7 +22,7 @@ A su vez no se proporciona un valor agregado al cliente que lo incentive a escog
 y ha hecho que el crecimiento de la empresa no sea el esperado.
 
 ## Justificación 
-La microempresa según lo planteado en el problema necesita un sistema de información que les permita tener más organizada la información, optimizar el tiempo y hacer más fácil la organización de esta información. También para que esta información sea más completa y efectiva.
+La microempresa, tal como se ha expuesto en el problema planteado, requiere implementar un sistema que facilite una gestión más ordenada de la información, optimice el tiempo y simplifique la organización de sus datos. Así mismo, es necesario que la información sea accesible y se pueda gestionar de forma  eficaz.
 
 ## Alcance 
 
