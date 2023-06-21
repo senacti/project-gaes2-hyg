@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\inventarioController;
 use App\Http\Controllers\ventaController;
 use App\Http\Controllers\compraController;
+use App\Http\Controllers\GastosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,3 +87,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('home', inventarioController::class);
 Route::resource('ventas', ventaController::class);
 Route::resource('compras', compraController::class);
+Route::resource('gastos', GastosController::class);
