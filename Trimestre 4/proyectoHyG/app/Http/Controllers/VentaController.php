@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inventario;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 
-class InventarioController extends Controller
+class VentaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $productos=Inventario::all();
-        return view('inventario.inventario',compact('productos'));
+        $ventas=Venta::all();
+        return view('ventas.indexVentas',compact('ventas'));
     }
 
     /**
@@ -29,18 +29,19 @@ class InventarioController extends Controller
      */
     public function store(Request $request)
     {
-        $productos = new Inventario;
-        $productos->nombre=$request->input('nombre');
-        $productos->cantidad=$request->input('cantidad');
-        $productos->precio_unit=$request->input('Valor');
-        $productos->save();
+        $ventas = new Venta;
+        $ventas->fecha=$request->input('fecha');
+        $ventas->producto=$request->input('producto');
+        $ventas->cantidad=$request->input('cantidad');
+        $ventas->precio=$request->input('precio');
+        $ventas->save();
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Inventario $inventario)
+    public function show(Venta $venta)
     {
         //
     }
@@ -48,10 +49,9 @@ class InventarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Venta $venta)
     {
-        // $productos=Inventario::find($id);
-        // return view(producto)
+        //
     }
 
     /**
@@ -59,13 +59,13 @@ class InventarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $productos=Inventario::find($id);
-        $productos->nombre=$request->input('nombre');
-        $productos->cantidad=$request->input('cantidad');
-        $productos->precio_unit=$request->input('Valor');
-        $productos->update();
+        $ventas=Venta::find($id);
+        $ventas->fecha=$request->input('fecha');
+        $ventas->producto=$request->input('producto');
+        $ventas->cantidad=$request->input('cantidad');
+        $ventas->precio=$request->input('precio');
+        $ventas->update();
         return redirect()->back();
-
     }
 
     /**
@@ -73,8 +73,8 @@ class InventarioController extends Controller
      */
     public function destroy($id)
     {
-        $productos=Inventario::find($id);
-        $productos->delete();
+        $ventas=Venta::find($id);
+        $ventas->delete();
         return redirect()->back();
     }
 }

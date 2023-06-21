@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\inventarioController;
-
+use App\Http\Controllers\ventaController;
+use App\Http\Controllers\compraController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,9 +51,9 @@ Route::get('/InicioCliente', function () {
 Route::get('/InicioFuncionarios', function () {
     return view('InicioFuncionarios');
 });
-Route::get('/Inventario', function () {
-    return view('Inventario');
-});
+// Route::get('/Inventario', function () {
+//     return view('Inventario');
+// });
 Route::get('/Nosotros', function () {
     return view('Nosotros');
 });
@@ -71,9 +72,9 @@ Route::get('/RegistCompra', function () {
 Route::get('/registroCliente', function () {
     return view('registroCliente');
 });
-Route::get('/RegVenta', function () {
-    return view('RegVenta');
-});
+// Route::get('/RegVenta', function () {
+//     return view('RegVenta');
+// });
 Route::get('/resgistroEmpleado', function () {
     return view('resgistroEmpleado');
 });
@@ -83,3 +84,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('home', inventarioController::class);
+Route::resource('ventas', ventaController::class);
+Route::resource('compras', compraController::class);
