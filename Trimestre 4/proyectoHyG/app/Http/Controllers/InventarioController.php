@@ -23,7 +23,7 @@ class InventarioController extends Controller
 
     public function pdf (){
         
-        $inventario = Inventario::all();
+        $home = Inventario::all();
         $pdf = Pdf::loadView('inventario.pdf', compact('inventario'));
         return $pdf->stream();
     }

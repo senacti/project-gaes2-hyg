@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\inventarioController;
 use App\Http\Controllers\ventaController;
 use App\Http\Controllers\compraController;
-
+use App\Http\Controllers\GastosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +41,7 @@ Route::get('/error404', function () {
 Route::get('/error500', function () {
     return view('E500');
 });
-Route::get('/', function () {
+Route::get('/index', function () {
     return view('index');
 });
 Route::get('/InicioCliente', function () {
@@ -65,8 +65,8 @@ Route::get('/Pedidos', function () {
 Route::get('/regInfProveedores', function () {
     return view('regInfProveedores');
 });
-Route::get('/RegistCompra', function () {
-    return view('RegistCompra');
+Route::get('/RegistrarCompra', function () {
+    return view('compras.index');
 });
 Route::get('/registroCliente', function () {
     return view('registroCliente');
@@ -80,12 +80,26 @@ Route::get('/resgistroEmpleado', function () {
 Route::get('/loginF', function () {
     return view('loginF');
 });
+Route::get('/ventas', function () {
+    return view('ventas.index');
+});
+Route::get('/compras', function () {
+    return view('compras.index');
+});
+Route::get('/gastos', function () {
+    return view('gastos.index');
+});
+
 
 
 Auth::routes();
-Route::get('home/pdf', [InventarioController::class, 'pdf'])->name('home');
+
+Route::get('inventario/pdf', [InventarioController::class, 'pdf'])->name('inventario.pdf');
 Route::get('ventas/pdf', [VentaController::class, 'pdf'])->name('ventas.pdf');
+Route::get('compras/pdf', [CompraController::class, 'pdf'])->name('compras.pdf');
+Route::get('gastos/pdf', [GastosController::class, 'pdf'])->name('gastos.pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('home', inventarioController::class);
 Route::resource('ventas', ventaController::class);
-Route::resource('compras', compraController::class);
+Route::resource('compras', CompraController::class);
+Route::resource('gastos', GastosController::class);

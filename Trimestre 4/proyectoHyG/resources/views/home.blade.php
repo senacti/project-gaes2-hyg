@@ -35,22 +35,23 @@
                 <li>
                      <strong>GESTIONAR VENTAS</strong>
                     <ul>
-                        <li><a href="{{ url('/RegVenta') }}"> Registrar Ventas</a> </li>
-                        <li><a href="{{ url('/Pconstrucción') }}">Informe de Ventas</a>  </li>
+                        <li><a href="{{url('/ventas') }}"> Registrar Ventas</a> </li>
+                        <li><a href="">Informe de Ventas</a>  </li>
                     </ul>
                 </li>
                 <li>
                      <strong>GESTIONAR COMPRAS</strong>
                     <ul>
-                        <li><a href="{{ url('/Pconstrucción') }}">Ver Proveedores </a> </li>
-                        <li><a href="{{ url('/RegistCompra') }}">Registrar Compra </a></li>
-                        <li><a href="{{ url('/Pconstrucción') }}">Detalles de la Compra </a></li>
+                        <li><a href="{{ url('/gastos') }}">Registrar Gastos </a> </li>
+                        <li><a href="{{ url('/compras') }}">Registrar Compras </a></li>
+                        
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR INVENTARIO</strong>
                     <ul>
                         <li> <a href="{{ url('/Inventario') }}">Ver Inventario </a></li>
+                        <li><a href="">Informe de Inventario</a>  </li>
                     </ul>
                 </li>
                 <li>

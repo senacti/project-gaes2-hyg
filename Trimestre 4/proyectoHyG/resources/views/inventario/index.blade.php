@@ -16,7 +16,7 @@
                 <table class="table">
                     <thead class="bg-dark text-white">
                         <tr>
-                            <th scope="col">ID Cliente</th>
+                            <th scope="col">ID producto</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Cantidad</th>
                             <th scope="col">Precio unit</th>
