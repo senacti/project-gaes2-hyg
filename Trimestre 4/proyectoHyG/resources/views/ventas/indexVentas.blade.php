@@ -11,6 +11,7 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
                 Nuevo
             </button>
+            <a href="{{route('ventas.pdf')}}" class="btn btn-success">PDF</a>
             <br><br>
             <div class="table-responsive">
                 <table class="table">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venta;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class VentaController extends Controller
 {
@@ -16,6 +17,12 @@ class VentaController extends Controller
         return view('ventas.indexVentas',compact('ventas'));
     }
 
+    public function pdf (){
+
+        $ventas = Venta::all();
+        $pdf = Pdf::loadView('ventas.pdf', compact('ventas'));
+        return $pdf->stream();
+    }
     /**
      * Show the form for creating a new resource.
      */
