@@ -22,6 +22,7 @@ class GastosController extends Controller
         $pdf = Pdf::loadView('gastos.pdf', compact('gastos'));
         return $pdf->stream();
     }
+
     /**
      * Show the form for creating a new resource.
      */
