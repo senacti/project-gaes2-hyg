@@ -16,8 +16,9 @@ class GastosController extends Controller
         $gastos=Gastos::all();
         return view('gastos.indexGastos',compact('gastos'));
     }
+
     public function pdf (){
-        
+
         $gastos = Gastos::all();
         $pdf = Pdf::loadView('gastos.pdf', compact('gastos'));
         return $pdf->stream();

@@ -5,6 +5,7 @@ use App\Http\Controllers\inventarioController;
 use App\Http\Controllers\ventaController;
 use App\Http\Controllers\compraController;
 use App\Http\Controllers\GastosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,15 +24,15 @@ Route::get('/catalogo', function () {
 Route::get('/Contacto', function () {
     return view('Contacto');
 });
-Route::get('/DashboardAdmin', function () {
-    return view('DashboardAdmin');
-});
-Route::get('/DashBoardCliente', function () {
-    return view('DashBoardCliente');
-});
-Route::get('/DashboardEmpleado', function () {
-    return view('DashboardEmpleado');
-});
+// Route::get('/DashboardAdmin', function () {
+//     return view('DashboardAdmin');
+// });
+// Route::get('/DashBoardCliente', function () {
+//     return view('DashBoardCliente');
+// });
+// Route::get('/DashboardEmpleado', function () {
+//     return view('DashboardEmpleado');
+// });
 Route::get('/Catalogo', function () {
     return view('Catalogo');
 });
@@ -41,7 +42,7 @@ Route::get('/error404', function () {
 Route::get('/error500', function () {
     return view('E500');
 });
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('inicio');
 });
 Route::get('/InicioCliente', function () {

@@ -18,7 +18,7 @@ class VentaController extends Controller
     }
 
     public function pdf (){
-        
+
         $ventas = Venta::all();
         $pdf = Pdf::loadView('ventas.pdf', compact('ventas'));
         return $pdf->stream();

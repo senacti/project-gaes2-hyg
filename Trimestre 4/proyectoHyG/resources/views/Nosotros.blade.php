@@ -55,9 +55,9 @@
     <div class="row" id="sobreNosotros">
         <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
             <h1 class="display-1 ">SOBRE NOSOTROS</h1>
-            <p class="h4"> Somos una tienda de abarrotes familiar, donde nos enfocamos en ofrecer 
+            <p class="h4"> Somos una tienda de abarrotes familiar, donde nos enfocamos en ofrecer
                 productos de alta calidad a precios accesibles. Encontrarás todo lo que necesitas para tu
-                 hogar, desde alimentos básicos como arroz, frijoles, harina y azúcar, hasta productos de 
+                 hogar, desde alimentos básicos como arroz, frijoles, harina y azúcar, hasta productos de
                  limpieza, cuidado personal y productos para tu mascota.</p>
             <a
                 class="btn btn-light btn-lg action-button" href="{{url("/Catalogo")}}">CATALOGO<i class="fa fa-long-arrow-right ml-2"></i></a>
@@ -65,10 +65,10 @@
         <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
             <div class="iphone-mockup">
             <img class="device" src="{{ asset('Iconos/comida.png') }}">
-            
+
               <!--  <div class="screen">
                 </div>
-                
+
                 -->
             </div>
         </div>

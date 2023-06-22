@@ -1,4 +1,4 @@
-@extends('home')
+{{-- @extends('home')
 @section('content')
 
     <div class="row">
@@ -48,4 +48,5 @@
         </div>
         <div class="col-md-2"></div>
     </div>
-@endsection
+@endsection --}}
+

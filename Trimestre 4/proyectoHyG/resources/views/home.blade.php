@@ -35,7 +35,7 @@
                 <li>
                      <strong>GESTIONAR VENTAS</strong>
                     <ul>
-                        <li><a href="{{ url('/RegVenta') }}"> Registrar Ventas</a> </li>
+                        <li><a href="{{ url('/ventas') }}"> Registrar Ventas</a> </li>
                         <li><a href="{{ url('/Pconstrucción') }}">Informe de Ventas</a>  </li>
                     </ul>
                 </li>
@@ -45,13 +45,14 @@
                         <li><a href="{{ url('/gastos') }}">Registrar Gastos </a> </li>
                         <li><a href="{{ url('/compras') }}">Registrar Compras </a></li>
                         
+
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR INVENTARIO</strong>
                     <ul>
-                        <li> <a href="{{ url('/Inventario') }}">Ver Inventario </a></li>
-                        <li><a href="">Informe de Inventario</a>  </li>
+                        <li> <a href="{{ url('/RInventario') }}">Ver Inventario </a></li>
+                        <li><a href="{{ url('/Pconstrucción') }}">Informe de Inventario</a>  </li>
                     </ul>
                 </li>
                 <li>
@@ -62,7 +63,6 @@
                 </li>
             </ul>
             <br><br>
-            
                 <a class="btn btn-outline-primary" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">

@@ -14,17 +14,18 @@ class InventarioController extends Controller
     public function index()
     {
         $productos=Inventario::all();
-        return view('inventario.index',compact('productos'));
-        return view('inventario.inventario',compact('productos'));
-    }
 
+        return view('inventario.index',compact('productos'));
+       // return view('inventario.inventario',compact('productos'));
+
+    }
     /**
      * Show the form for creating a new resource.
      */
 
     public function pdf (){
-        
-        $home = Inventario::all();
+
+        $inventario = Inventario::all();
         $pdf = Pdf::loadView('inventario.pdf', compact('inventario'));
         return $pdf->stream();
     }
