@@ -7,7 +7,7 @@
           <h5 class="modal-title" id="exampleModalLabel">EDITAR PRODUCTO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="{{route('inventario.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('RInventario.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
                 <div class="mb-3">

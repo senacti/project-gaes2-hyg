@@ -1,6 +1,6 @@
 
   <!-- Modal update -->
-  home
+
   <!-- Modal -->
   <div class="modal fade" id="edit{{$producto->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -9,7 +9,7 @@
           <h5 class="modal-title" id="exampleModalLabel">AGREGAR PRODUCTO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="{{route('inventario.update', $producto->id)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('RInventario.update', $producto->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="modal-body">
@@ -46,7 +46,7 @@
           <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="{{route('inventario.destroy', $producto->id)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('RInventario.destroy', $producto->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('DELETE')
             <div class="modal-body">

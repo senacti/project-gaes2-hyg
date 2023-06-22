@@ -87,7 +87,7 @@ Auth::routes();
 Route::get('home/pdf', [InventarioController::class, 'pdf'])->name('home');
 Route::get('ventas/pdf', [VentaController::class, 'pdf'])->name('ventas.pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('home', inventarioController::class);
+Route::resource('RInventario', inventarioController::class);
 Route::resource('ventas', ventaController::class);
 Route::resource('compras', compraController::class);
 Route::resource('gastos', GastosController::class);
