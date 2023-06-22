@@ -5,7 +5,7 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <br><br><br>
-            <h3>Registra Ventas</h3>
+            <h3>Registrar Ventas</h3>
             <br>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">

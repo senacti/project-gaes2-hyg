@@ -5,7 +5,7 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <br><br><br>
-            <h3>Registra Compras</h3>
+            <h3>Registrar Gastos</h3>
             <br>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
@@ -27,7 +27,7 @@
                         @foreach ($gastos as $gasto)
                         <tr class="">
                             <td scope="row">{{$gasto->id}}</td>
-                            <td>{{$gasto->fecha}}</td>5688888888
+                            <td>{{$gasto->fecha}}</td>
                             <td>{{$gasto->descripcion}}</td>
                             <td>{{$gasto->valor}}</td>
                             <td>

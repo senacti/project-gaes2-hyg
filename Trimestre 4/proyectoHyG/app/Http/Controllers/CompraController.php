@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Compra;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CompraController extends Controller
 {
@@ -16,6 +17,12 @@ class CompraController extends Controller
         return view('compras.indexCompras',compact('compras'));
     }
 
+    public function pdf (){
+        
+        $compras = Compra::all();
+        $pdf = Pdf::loadView('compras.pdf', compact('compras'));
+        return $pdf->stream();
+    }
     /**
      * Show the form for creating a new resource.
      */

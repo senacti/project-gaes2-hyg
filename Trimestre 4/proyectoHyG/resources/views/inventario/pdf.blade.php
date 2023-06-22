@@ -10,10 +10,26 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-</head>
-
-<body>
+    <style>
+      .cabecera{
+        background-color:  #D3E1EB ;
+      
+      }
+      .table{
+        text-align: center;
+        font-size: 15px;
+      }
+      .logo {
+              width: 160px;
+              height: 85px;
+          }
+      </style>
+      
+      </head>
+      
+      <body>
+        <img class="logo" src="Iconos/image-removebg-preview.png" alt="">
+        <h1 class="text-center">REPORTE DE INVENTARIO</h1><br>
     <table class="table">
         <thead class="bg-dark text-white">
             <tr>

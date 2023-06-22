@@ -43,7 +43,7 @@ Route::get('/error500', function () {
     return view('E500');
 });
 Route::get('/', function () {
-    return view('index');
+    return view('inicio');
 });
 Route::get('/InicioCliente', function () {
     return view('InicioCliente');
@@ -66,8 +66,8 @@ Route::get('/Pedidos', function () {
 Route::get('/regInfProveedores', function () {
     return view('regInfProveedores');
 });
-Route::get('/RegistCompra', function () {
-    return view('RegistCompra');
+Route::get('/RegistrarCompra', function () {
+    return view('compras.index');
 });
 Route::get('/registroCliente', function () {
     return view('registroCliente');
@@ -81,13 +81,27 @@ Route::get('/resgistroEmpleado', function () {
 Route::get('/loginF', function () {
     return view('loginF');
 });
+Route::get('/ventas', function () {
+    return view('ventas.index');
+});
+Route::get('/compras', function () {
+    return view('compras.index');
+});
+Route::get('/gastos', function () {
+    return view('gastos.index');
+});
+
 
 
 Auth::routes();
-Route::get('home/pdf', [InventarioController::class, 'pdf'])->name('home');
+
+Route::get('inventario/pdf', [InventarioController::class, 'pdf'])->name('inventario.pdf');
 Route::get('ventas/pdf', [VentaController::class, 'pdf'])->name('ventas.pdf');
+Route::get('compras/pdf', [CompraController::class, 'pdf'])->name('compras.pdf');
+Route::get('gastos/pdf', [GastosController::class, 'pdf'])->name('gastos.pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('RInventario', inventarioController::class);
 Route::resource('ventas', ventaController::class);
 Route::resource('compras', compraController::class);
 Route::resource('gastos', GastosController::class);
+

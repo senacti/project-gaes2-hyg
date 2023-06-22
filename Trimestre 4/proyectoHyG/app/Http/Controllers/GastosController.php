@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Gastos;
 use Illuminate\Http\Request;
 
@@ -17,6 +17,12 @@ class GastosController extends Controller
         return view('gastos.indexGastos',compact('gastos'));
     }
 
+    public function pdf (){
+
+        $gastos = Gastos::all();
+        $pdf = Pdf::loadView('gastos.pdf', compact('gastos'));
+        return $pdf->stream();
+    }
     /**
      * Show the form for creating a new resource.
      */
