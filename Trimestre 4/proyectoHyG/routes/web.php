@@ -24,15 +24,15 @@ Route::get('/catalogo', function () {
 Route::get('/Contacto', function () {
     return view('Contacto');
 });
-Route::get('/DashboardAdmin', function () {
-    return view('DashboardAdmin');
-});
-Route::get('/DashBoardCliente', function () {
-    return view('DashBoardCliente');
-});
-Route::get('/DashboardEmpleado', function () {
-    return view('DashboardEmpleado');
-});
+// Route::get('/DashboardAdmin', function () {
+//     return view('DashboardAdmin');
+// });
+// Route::get('/DashBoardCliente', function () {
+//     return view('DashBoardCliente');
+// });
+// Route::get('/DashboardEmpleado', function () {
+//     return view('DashboardEmpleado');
+// });
 Route::get('/Catalogo', function () {
     return view('Catalogo');
 });
