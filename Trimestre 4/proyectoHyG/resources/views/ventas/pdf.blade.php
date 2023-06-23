@@ -32,14 +32,14 @@
   <h1 class="text-center">REPORTE DE VENTAS</h1><br>
   <table class="table" >
     <thead class="cabecera">
-  
+
         <tr>
             <th scope="col">ID Venta</th>
             <th scope="col">Fecha</th>
             <th scope="col">Producto</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
-          
+
         </tr>
     </thead>
     <tbody>
@@ -51,7 +51,7 @@
             <td>{{$venta->cantidad}}</td>
             <td>{{$venta->precio}}</td>
             <td>
-       
+
         @endforeach
     </tbody>
 </table>

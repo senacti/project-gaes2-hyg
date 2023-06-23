@@ -6,48 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- Boostrap ---> 
+    <!-- Boostrap --->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body class="body">
 
     <header id="header">
+        <nav class="navbar navbar-expand-md navbar bg">
+            <div class="logo">
+                <img id="imglogo"src="{{ asset('Iconos/image-removebg-preview.png')}}" class="img-fluid" alt="Logo empresa">
 
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
 
-<nav class="navbar navbar-expand-md navbar bg">
-    <div class="logo">
-        <img id="imglogo"src="{{ asset('Iconos/image-removebg-preview.png')}}" class="img-fluid" alt="Logo empresa">
-       
-    </div>    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-           
-                    <a class="nav-link" href="{{ url('/') }}">Home </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('/Nosotros') }}">Nosotros </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('/Contacto') }}">Contacto </a>
-                </li>
-            </ul>
+                                <a class="nav-link" href="{{ url('/') }}">Home </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ url('/Nosotros') }}">Nosotros </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ url('/Contacto') }}">Contacto </a>
+                            </li>
+                </ul>
+            </div>
+        </nav>
+            <div >
+                <a class="btn btn-outline-primary" href="{{ route('login') }}">INICIO <br> DE SESIÓN</a>
+            </div>
 
-        </div>
-        
-    </div>
-</nav> 
-<div > 
-    <a class="btn btn-outline-primary" href="{{ route('login') }}">INICIO <br> DE SESIÓN</a>
-</div>
-
-
-
-</header>
+    </header>
       @yield('content')
       <footer class="footer">
 
