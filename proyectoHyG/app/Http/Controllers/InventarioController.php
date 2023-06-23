@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Barryvdh\DomPDF\Facade\Pdf;
+
 use App\Models\Inventario;
 use Illuminate\Http\Request;
-
 
 class InventarioController extends Controller
 {
@@ -14,21 +13,12 @@ class InventarioController extends Controller
     public function index()
     {
         $productos=Inventario::all();
-
         return view('inventario.index',compact('productos'));
-       // return view('inventario.inventario',compact('productos'));
-
     }
+
     /**
      * Show the form for creating a new resource.
      */
-
-    public function pdf (){
-
-        $inventario = Inventario::all();
-        $pdf = Pdf::loadView('inventario.pdf', compact('inventario'));
-        return $pdf->stream();
-    }
     public function create()
     {
         //

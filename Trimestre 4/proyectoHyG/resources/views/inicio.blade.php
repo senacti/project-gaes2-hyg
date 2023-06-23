@@ -1,5 +1,5 @@
 
-    @extends('layouts.guest')
+    @extends('layouts.inicio')
     @section('title', 'Inicio')
     @section('content')
     <main  class="container-fluid">

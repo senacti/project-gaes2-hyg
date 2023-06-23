@@ -5,6 +5,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">EDITAR PRODUCTO</h5>
+          
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="{{route('RInventario.store')}}" method="post" enctype="multipart/form-data">

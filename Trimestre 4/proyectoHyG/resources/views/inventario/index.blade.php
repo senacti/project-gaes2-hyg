@@ -1,4 +1,5 @@
-{{-- @extends('home')
+ @extends('layouts.DashboardAdmin')
+ @section('title', 'Inventario')
 @section('content')
 
     <div class="row">
@@ -48,5 +49,5 @@
         </div>
         <div class="col-md-2"></div>
     </div>
-@endsection --}}
-holamundo
+@endsection 
+
