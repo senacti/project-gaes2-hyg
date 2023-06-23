@@ -59,8 +59,7 @@
                 productos de alta calidad a precios accesibles. Encontrarás todo lo que necesitas para tu
                  hogar, desde alimentos básicos como arroz, frijoles, harina y azúcar, hasta productos de
                  limpieza, cuidado personal y productos para tu mascota.</p>
-            <a
-                class="btn btn-light btn-lg action-button" href="{{url("/Catalogo")}}">CATALOGO<i class="fa fa-long-arrow-right ml-2"></i></a>
+           
         </div>
         <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
             <div class="iphone-mockup">
