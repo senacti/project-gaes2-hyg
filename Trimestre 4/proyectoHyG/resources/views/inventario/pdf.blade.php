@@ -30,8 +30,8 @@
       <body>
         <img class="logo" src="Iconos/image-removebg-preview.png" alt="">
         <h1 class="text-center">REPORTE DE INVENTARIO</h1><br>
-    <table class="table">
-        <thead class="bg-dark text-white">
+        <table class="table" >
+          <thead class="cabecera">
             <tr>
                 <th scope="col">ID Cliente</th>
                 <th scope="col">Nombre</th>

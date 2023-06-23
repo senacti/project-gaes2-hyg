@@ -95,7 +95,7 @@ Route::get('/gastos', function () {
 
 Auth::routes();
 
-Route::get('/inventario/pdf', [InventarioController::class, 'pdf'])->name('inventario.pdf');
+Route::get('RInventario/pdf', [InventarioController::class, 'pdf'])->name('inventario.pdf');
 Route::get('ventas/pdf', [VentaController::class, 'pdf'])->name('ventas.pdf');
 Route::get('compras/pdf', [CompraController::class, 'pdf'])->name('compras.pdf');
 Route::get('gastos/pdf', [GastosController::class, 'pdf'])->name('gastos.pdf');

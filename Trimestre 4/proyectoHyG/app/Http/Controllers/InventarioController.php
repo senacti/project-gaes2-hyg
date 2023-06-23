@@ -25,8 +25,8 @@ class InventarioController extends Controller
 
     public function pdf (){
 
-        $inventario = Inventario::all();
-        $pdf = Pdf::loadView('inventario.pdf', compact('inventario'));
+        $productos= Inventario::all();
+        $pdf = Pdf::loadView('inventario.pdf', compact('productos'));
         return $pdf->stream();
     }
     public function create()
