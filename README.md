@@ -1,6 +1,5 @@
 # Repositorio proyecto H&G Valencia
-![LogoAzul-removebg-preview (1)](https://github.com/senauti/project-gaes2-hyg/assets/127152289/898dd4ff-2f12-449f-9223-7b7ce0f0cd6d)
-
+![Logo H y G Valencia](https://github.com/senauti/project-gaes2-hyg/blob/main/Trimestre%201/Logo/HyGValencia-removebg-preview.png)
 
 ## Objetivo general 
 
