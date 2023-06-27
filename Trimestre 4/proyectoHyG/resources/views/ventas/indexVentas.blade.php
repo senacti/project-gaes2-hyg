@@ -1,4 +1,5 @@
 @extends('home')
+@section('title', 'Ventas')
 @section('content')
 
     <div class="row">
