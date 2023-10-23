@@ -16,3 +16,8 @@ def nosotros(request):
     return render(request,'nosotros.html',{
         #context
     })
+
+def dashboard_administrador(request):
+    return render(request,'DashboardAdmin.html',{
+        #context
+    })
