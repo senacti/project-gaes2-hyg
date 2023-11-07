@@ -6,6 +6,17 @@ class Proveedor(models.Model):
         max_length=255, null=True, blank=True)
     nombre = models.CharField(max_length=255, null=True, blank=True)
     telefono = models.CharField(max_length=255, null=True, blank=True)
+    
+    def __str__(self):
+        return self.nombre
+    
+    class Meta:
+        verbose_name = 'proveedor'
+        verbose_name_plural = 'proveedores'
+        db_table = 'proveedor'
+        ordering = ['id'] 
+		
+
 
 
 class Compra(models.Model):
@@ -18,7 +29,13 @@ class Compra(models.Model):
     productoc = models.CharField(max_length=255, null=True, blank=True)
     proveedorc = models.CharField(max_length=255, null=True, blank=True)
     proveedor = models.ForeignKey(
-        Proveedor, on_delete=models.SET_NULL, null=True)
+    Proveedor, on_delete=models.SET_NULL, null=True)
+    
+    class Meta:
+        verbose_name = 'compra'
+        verbose_name_plural = 'compras'
+        db_table = 'compras'
+        ordering = ['id'] 
 
 
 class Venta(models.Model):
@@ -26,6 +43,12 @@ class Venta(models.Model):
 
     def __str__(self):
         return str(self.id)
+    
+    class Meta:
+        verbose_name = 'venta'
+        verbose_name_plural = 'ventas'
+        db_table = 'ventas'
+        ordering = ['id'] 
 
 
 class ProductoVendido(models.Model):
@@ -37,6 +60,12 @@ class ProductoVendido(models.Model):
 
     def __str__(self):
         return self.nombre
+
+    class Meta:
+        verbose_name = 'ProductoVendido'
+        verbose_name_plural = 'ProductosVendidos'
+        db_table = 'ProductoVendido'
+        ordering = ['id'] 
 
 
 class Role(models.Model):
@@ -73,6 +102,12 @@ class Gastos(models.Model):
     def __str__(self):
         return self.descripcion
 
+    class Meta:
+            verbose_name = 'gasto'
+            verbose_name_plural = 'gastos'
+            db_table = 'gastos'
+            ordering = ['id'] 
+
 
 class Producto(models.Model):
     precio = models.IntegerField()
@@ -82,3 +117,9 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+    class Meta:
+            verbose_name = 'Producto'
+            verbose_name_plural = 'Productos'
+            db_table = 'Producto'
+            ordering = ['id'] 
