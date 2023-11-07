@@ -21,3 +21,16 @@ def dashboard_administrador(request):
     return render(request,'DashboardAdmin.html',{
         #context
     })
+
+def login(request):
+    return render(request,'login.html',{
+        #context
+    })
+
+def registro(request):
+    return render(request,'registro.html',{
+        #context
+    })
+
+
+
