@@ -35,13 +35,12 @@ class Products(models.Model):
 
 
 class Suppliers(models.Model):
-    email = models.CharField(
-        max_length=255, null=True, blank=True)
+    email = models.CharField(max_length=255, null=True, blank=True)
     name = models.CharField(max_length=255, null=True, blank=True)
     phone = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return self.nombre
+        return self.name
 
     class Meta:
         verbose_name = 'proveedor'
@@ -51,14 +50,13 @@ class Suppliers(models.Model):
 
 
 class Compra(models.Model):
+    description = models.CharField(max_length=255, null=True)
     #    amount = cantidad, suppliers = proveedores
     amountc = models.IntegerField()
     datec = models.DateField(null=True, blank=True)
     pricec = models.IntegerField()
     productc = models.CharField(max_length=255, null=True, blank=True)
-    suppliersc = models.CharField(max_length=255, null=True, blank=True)
-    supplier = models.ForeignKey(
-        Suppliers, on_delete=models.SET_NULL, null=True)
+    supplier = models.ForeignKey(Suppliers, on_delete=models.SET_NULL, null=True)
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
 
     class Meta:
@@ -67,6 +65,9 @@ class Compra(models.Model):
         db_table = 'compras'
         ordering = ['id']
 
+    def __str__(self):
+        return self.description
+
 
 class Gastos(models.Model):
     description = models.CharField(max_length=255, null=True)
@@ -74,7 +75,7 @@ class Gastos(models.Model):
     price = models.IntegerField()
 
     def __str__(self):
-        return self.descripcion
+        return self.description
 
     class Meta:
         verbose_name = 'gasto'
