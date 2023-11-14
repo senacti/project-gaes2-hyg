@@ -54,8 +54,7 @@ class Compra(models.Model):
     #    amount = cantidad, suppliers = proveedores
     amountc = models.IntegerField()
     datec = models.DateField(null=True, blank=True)
-    pricec = models.IntegerField()
-    productc = models.CharField(max_length=255, null=True, blank=True)
+    pricec = models.IntegerField()  
     supplier = models.ForeignKey(Suppliers, on_delete=models.SET_NULL, null=True)
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
 
