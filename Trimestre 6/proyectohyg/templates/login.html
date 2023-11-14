@@ -48,57 +48,66 @@
                         </div>
 
                         <div class="card-body custom-height ">
+                          <form action="" method="post">
+                            {% csrf_token %}
+                            <img class="mb-4" src={% static 'core/images/bootstrap-logo.svg' %} alt="" width="72" height="57">
+                            <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+                        
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label float-md-start">Nombre de Usuario</label>
+                              <input type="text" class="form-control" name="username" id="exampleInputEmail1">
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label float-md-start">Contraseña</label>
+                              <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                            </div>
+                        
+                            <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
+                            <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+                          </form>
 
-
-                            <form method="post" action="{% url 'dashboard_administrador' %}"  class="needs-validation" novalidate>
-                   
-
-                                <div class="form-outline mb-4">
-
-                                  <div id="textCliente" class="text-center">
-
+                          {% comment %} <form method="post" action="{% url 'dashboard_administrador' %}" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                        
+                            <div class="form-outline mb-4">
+                                <div id="textCliente" class="text-center">
                                     <img id="funcionarioIcono" src="{% static 'Iconos/funcionarioIcono.jpg' %}" class="img-fluid" alt="IconoUsuario">
-                                  </div>
-
                                 </div>
-                                <div class="form-outline mb-4">
-
-                                <input type="email" name="email" id="form2Example11" class="form-control" placeholder="Escriba su correo" id="validationCustom01" required/>
+                            </div>
+                        
+                            <div class="form-outline mb-4">
+                                <input type="email" name="email" id="form2Example11" class="form-control" placeholder="Escriba su correo" required/>
                                 <div class="invalid-feedback">
-                                  Ingrese un correo valido usando @
-                              </div>
-
+                                    Ingrese un correo válido usando @
                                 </div>
-
-                                <div class="form-outline mb-4">
-
-                                  <input type="password" name="password" id="form2Example22" class="form-control" placeholder="Ingrese su contraseña" id="validationCustom01" required/>
-                                  <div class="invalid-feedback">
-                                    Por favor escriba su contraseña
+                            </div>
+                        
+                            <div class="form-outline mb-4">
+                                <input type="password" name="password" id="form2Example22" class="form-control" placeholder="Ingrese su contraseña" required/>
+                                <div class="invalid-feedback">
+                                    Por favor, escriba su contraseña
                                 </div>
-
-                                </div>
-
-                                <div class="text-center pt-1 mb-5 pb-1">
-
-                                    <button class="btn btn-primary btn-lg" type="submit">INGRESAR</button>
-
-                                </div>
-                                <div class="text-center pt-1 mb-5 pb-1"><p><a class="link-opacity-75-hover" href="#">¿Olvidaste tu contraseña?</a></p></div>
-
-                                <div class="d-flex align-items-center justify-content-center pb-4">
-
-                                  <p class="mb-0 me-2">¿Aún no te has registrado?</p>
-
-                                  <a class="btn btn-outline-primary" href="{% url 'registro' %}" >REGISTRARSE</a>
-                                </div>
-
-                              </form>
+                            </div>
+                        
+                            <div class="text-center pt-1 mb-5 pb-1">
+                                <button class="btn btn-primary btn-lg" type="submit">INGRESAR</button>
+                            </div>
+                        
+                            <div class="text-center pt-1 mb-5 pb-1">
+                                <p><a class="link-opacity-75-hover" href="#">¿Olvidaste tu contraseña?</a></p>
+                            </div>
+                        
+                            <div class="d-flex align-items-center justify-content-center pb-4">
+                                <p class="mb-0 me-2">¿Aún no te has registrado?</p>
+                                <a class="btn btn-outline-primary" href="{% url 'registro' %}">REGISTRARSE</a>
+                            </div>
+                        </form> {% endcomment %}
+                        
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+      </div>
 
     </main>
 
