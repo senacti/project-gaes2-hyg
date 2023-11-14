@@ -50,7 +50,8 @@
                         <div class="card-body custom-height ">
 
 
-                            <form method="post" action="{% url 'dashboard_administrador' %}"  class="needs-validation" novalidate>
+                            <form method="post" >
+                              {%csrf_token%}
                    
 
                                 <div class="form-outline mb-4">
@@ -62,11 +63,9 @@
 
                                 </div>
                                 <div class="form-outline mb-4">
-
-                                <input type="email" name="email" id="form2Example11" class="form-control" placeholder="Escriba su correo" id="validationCustom01" required/>
-                                <div class="invalid-feedback">
-                                  Ingrese un correo valido usando @
-                              </div>
+                                
+                                <input type="text" name="username" id="form2Example11" class="form-control" placeholder="Escriba su usuario" id="validationCustom01" required/>
+                                
 
                                 </div>
 
