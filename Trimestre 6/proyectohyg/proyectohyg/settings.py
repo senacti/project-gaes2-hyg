@@ -48,7 +48,8 @@ INSTALLED_APPS = [
 
 JAZZMIN_SETTINGS = {
     'welcome_sign': 'Bienvenido Admin',
-    'login_logo':None,
+    'login_logo':'Iconos\Logo_hyg (1).png',
+    'site_icon': 'Iconos\hyg-logo-ivcon.png',
 }
 
 MIDDLEWARE = [
