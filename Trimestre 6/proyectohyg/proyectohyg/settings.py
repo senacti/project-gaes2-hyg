@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +45,11 @@ INSTALLED_APPS = [
     'sales',
     'cart',
 ]
+
+JAZZMIN_SETTINGS = {
+    'welcome_sign': 'Bienvenido Admin',
+    'login_logo':None,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
