@@ -38,3 +38,10 @@ def dashboard_administrador(request):
     return render(request, 'DashboardAdmin.html', {
         # context
     })
+
+
+@login_required
+def dashboard_cliente(request):
+    return render(request, 'DashboardCliente.html', {
+        # context
+    })

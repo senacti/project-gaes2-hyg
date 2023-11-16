@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'hyg',
     'sales',
     'cart',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,5 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/dashboard_admin/'
+
+AUTH_USER_MODEL = 'account.User'

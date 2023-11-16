@@ -26,6 +26,9 @@ urlpatterns = [
     path('nosotros/', views.nosotros, name='nosotros'),
     path('dashboardAdmin/', views.dashboard_administrador,
          name='dashboard_administrador'),
+    path('dashboarClient/', views.dashboard_administrador,
+         name='dashboard_cliente'),
     path('login/', views.login, name='login'),
     path('registro/', views.registro, name='registro'),
+    # path('cuenta/', include('account.urls')),
 ]
