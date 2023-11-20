@@ -1,12 +1,22 @@
 from django.contrib import admin
-from .models import Sale,ProductSold,Products
+from .models import Products,Venta, DetalleVenta,Cliente
 
-@admin.register(Sale)
-class SaleAdmin(admin.ModelAdmin):
-    list_display=('dateandhour',)
+class DetalleVentaInline(admin.TabularInline):
+    model = DetalleVenta
 
-@admin.register(ProductSold)
-class ProductSoldAdmin(admin.ModelAdmin):
-    list_display=('amount','code','name','price','product','sale')
 
-# Register your models here.
+@admin.register(Venta)
+class VentaAdmin(admin.ModelAdmin):
+    inlines = [DetalleVentaInline]
+    list_display = ('cliente', 'fecha', 'total')
+
+
+@admin.register(DetalleVenta)
+class DetalleVentaAdmin(admin.ModelAdmin):
+    list_display = ('venta', 'producto', 'cantidad', 'subtotal')
+
+
+@admin.register(Cliente)
+class ClienteAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'email', 'telefono')
+

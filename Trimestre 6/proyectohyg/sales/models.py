@@ -2,34 +2,32 @@ from django.db import models
 from hyg.models import Products
 
 # Create your models class Venta(models.Model):
-class Sale(models.Model):
-    dateandhour = models.DateTimeField(null=True)
-    products = models.ManyToManyField(Products, through='ProductSold')
+from django.db import models
+
+class Cliente(models.Model):
+    nombre = models.CharField(max_length=255)
+    email = models.EmailField()
+    telefono = models.CharField(max_length=20, null=True, blank=True)
 
     def __str__(self):
-        return str(self.id)
-    
-    class Meta:
-        verbose_name = 'venta'
-        verbose_name_plural = 'ventas'
-        db_table = 'ventas'
-        ordering = ['id'] 
+        return self.nombre
 
 
-class ProductSold(models.Model):
-    amount = models.FloatField(null=True)
-    code = models.CharField(max_length=255, null=True)
-    name = models.CharField(max_length=255, null=True)
-    price = models.FloatField(null=True)
-    product = models.ForeignKey(Products, on_delete=models.CASCADE)
-    sale = models.ForeignKey(Sale, on_delete=models.CASCADE)
+class Venta(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    fecha = models.DateField()
+    total = models.DecimalField(max_digits=10, decimal_places=2)
+    productos = models.ManyToManyField(Products, through='DetalleVenta')
 
     def __str__(self):
-        return self.name
+        return f"Venta {self.id} - Cliente: {self.cliente.nombre}"
 
-    class Meta:
-        verbose_name = 'ProductoVendido'
-        verbose_name_plural = 'ProductosVendidos'
-        db_table = 'ProductoVendido'
-        ordering = ['id'] 
+class DetalleVenta(models.Model):
+    venta = models.ForeignKey(Venta, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Products, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    subtotal = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"DetalleVenta {self.id} - Venta: {self.venta.id}, Producto: {self.producto.name}"
 
