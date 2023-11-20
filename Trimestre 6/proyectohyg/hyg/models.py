@@ -32,6 +32,8 @@ class Products(models.Model):
     
     def show_image(self):
         return format_html('<img src={} width="100" /> ', self.image.url)
+    
+    
 
     class Meta:
         verbose_name = 'Producto'
