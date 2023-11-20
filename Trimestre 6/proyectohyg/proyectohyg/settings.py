@@ -50,6 +50,14 @@ JAZZMIN_SETTINGS = {
     'welcome_sign': 'Bienvenido Admin',
     'login_logo':'Iconos\Logo_hyg (1).png',
     'site_icon': 'Iconos\hyg-logo-ivcon.png',
+    "site_title": "HYG",
+    "site_header": "HYG",
+    "site_brand": "HYG",
+    "site_logo": "Iconos\hyg-logo-ivcon.png",
+}
+
+JAZZMIN_UI_TWEAKS = {
+    'theme': 'flatly',
 }
 
 MIDDLEWARE = [
