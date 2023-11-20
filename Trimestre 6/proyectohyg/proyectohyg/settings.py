@@ -34,7 +34,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    'admin_interface',     
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,20 +46,22 @@ INSTALLED_APPS = [
     'sales',
     'cart',
 ]
+X_FRAME_OPTIONS = "SAMEORIGIN" 
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
-JAZZMIN_SETTINGS = {
-    'welcome_sign': 'Bienvenido Admin',
-    'login_logo':'Iconos\Logo_hyg (1).png',
-    'site_icon': 'Iconos\hyg-logo-ivcon.png',
-    "site_title": "HYG",
-    "site_header": "HYG",
-    "site_brand": "HYG",
-    "site_logo": "Iconos\hyg-logo-ivcon.png",
-}
+# JAZZMIN_SETTINGS = {
+#     'welcome_sign': 'Bienvenido Admin',
+#     'login_logo':'Iconos\Logo_hyg (1).png',
+#     'site_icon': 'Iconos\hyg-logo-ivcon.png',
+#     "site_title": "HYG",
+#     "site_header": "HYG",
+#     "site_brand": "HYG",
+#     "site_logo": "Iconos\hyg-logo-ivcon.png",
+# }
 
-JAZZMIN_UI_TWEAKS = {
-    'theme': 'flatly',
-}
+# JAZZMIN_UI_TWEAKS = {
+#     'theme': 'flatly',
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
