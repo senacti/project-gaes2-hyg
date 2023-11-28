@@ -50,7 +50,7 @@
                         <div class="card-body custom-height ">
 
 
-                            <form method="post" >
+                            <form method="post" action="{% url 'login' %}" id="login-form">
                               {%csrf_token%}
                    
 

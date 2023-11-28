@@ -5,13 +5,12 @@ from .models import Profile
 
 
 @receiver(post_save, sender=Profile)
-def add_user_to_students_group(sender, instance, created, **kwargs):
+def add_user_to_clients_group(sender, instance, created, **kwargs):
     if created:
         try:
-            students = Group.objects.get(name='estudiante')
+            group1 = Group.objects.get(name='Cliente')
         except Group.DoesNotExist:
-            students = Group.objects.create(name='estudiante')
-            students = Group.objects.create(name='profesor')
-            students = Group.objects.create(name='preceptor')
-            students = Group.objects.create(name='administrativo')
-        instance.user.groups.add(students)
+            group1 = Group.objects.create(name='Cliente')
+            group2 = Group.objects.create(name='Empleado')
+            group3 = Group.objects.create(name='Administrativo')
+        instance.user.groups.add(group1)
