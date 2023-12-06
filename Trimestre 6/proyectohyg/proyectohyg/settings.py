@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_interface',     
+    'admin_interface',
     'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'hyg',
     'sales',
     'cart',
+    'user.apps.UserConfig',
 ]
-X_FRAME_OPTIONS = "SAMEORIGIN" 
+X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 # JAZZMIN_SETTINGS = {
@@ -148,5 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media files
 MEDIA_URL = 'media/'
 MEDIAFILES_DIRS = (
-    os.path.join(BASE_DIR,'media'),
+    os.path.join(BASE_DIR, 'media'),
 )
+
+AUTH_USER_MODEL = 'user.CustomUser'

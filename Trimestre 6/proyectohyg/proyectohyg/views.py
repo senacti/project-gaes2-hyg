@@ -5,32 +5,38 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 from django.contrib import messages
+from user.forms import CustomUserCreationForm
 
 
 def inicio(request):
-    return render(request,'inicio.html',{
-        #context
+    return render(request, 'inicio.html', {
+        # context
     })
+
 
 def contacto(request):
-    return render(request,'contacto.html',{
-        #context
+    return render(request, 'contacto.html', {
+        # context
     })
+
 
 def nosotros(request):
-    return render(request,'nosotros.html',{
-        #context
+    return render(request, 'nosotros.html', {
+        # context
     })
+
 
 def dashboard_administrador(request):
-    return render(request,'DashboardAdmin.html',{
-        #context
+    return render(request, 'DashboardAdmin.html', {
+        # context
     })
 
+
 def dashboard_cliente(request):
-    return render(request,'DashboardClient.html',{
-        #context
+    return render(request, 'DashboardClient.html', {
+        # context
     })
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -41,22 +47,28 @@ def login_view(request):
             login(request, user)
             messages.success(request, 'Bienvenido {}'.format(user.username))
             return redirect('admin:index')
-        else: 
+        else:
             messages.error(request, 'Usuario o contraseña incorrectos')
     return render(request, 'login.html',
                   {
 
-    })
+                  })
+
 
 def registro(request):
-    return render(request,'registro.html',{
-        #context
-    })
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            # Cambia 'home' con la URL a la que quieras redirigir después del registro
+            return redirect('inicio')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'Registro.html', {'form': form})
+
 
 def logout_view(request):
     logout(request)
     messages.success(request, 'Sesión finalizada')
     return redirect('login')
-
-
-

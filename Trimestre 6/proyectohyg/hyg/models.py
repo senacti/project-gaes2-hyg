@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.html import format_html
 
 # Create your models here.
+
+
 class Category(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
@@ -23,17 +25,16 @@ class Products(models.Model):
     amount = models.FloatField(null=True)
     name = models.CharField(max_length=255, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    expiration_date = models.DateField(null=True)  # Atributo de fecha de vencimiento
+    # Atributo de fecha de vencimiento
+    expiration_date = models.DateField(null=True)
     status = models.CharField(max_length=50, null=True)
-    image = models.ImageField(upload_to='media', null=True, blank=True)
+    # image = models.ImageField(upload_to='media', null=True, blank=True)
 
     def __str__(self):
         return self.name  # Mantén el nombre del campo como "name"
-    
-    def show_image(self):
-        return format_html('<img src={} width="100" /> ', self.image.url)
-    
-    
+
+    # def show_image(self):
+    #     return format_html('<img src={} width="100" /> ', self.image.url)
 
     class Meta:
         verbose_name = 'Producto'
@@ -62,8 +63,9 @@ class Compra(models.Model):
     #    amount = cantidad, suppliers = proveedores
     amountc = models.IntegerField()
     datec = models.DateField(null=True, blank=True)
-    pricec = models.IntegerField()  
-    supplier = models.ForeignKey(Suppliers, on_delete=models.SET_NULL, null=True)
+    pricec = models.IntegerField()
+    supplier = models.ForeignKey(
+        Suppliers, on_delete=models.SET_NULL, null=True)
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
 
     class Meta:
