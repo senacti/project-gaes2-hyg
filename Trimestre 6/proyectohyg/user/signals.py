@@ -13,4 +13,4 @@ def add_user_to_clients_group(sender, instance, created, **kwargs):
             group1 = Group.objects.create(name='Administradores')
             group2 = Group.objects.create(name='Empleados')
             group3 = Group.objects.create(name='clientes')
-        instance.username.groups.add(group1)
+        instance.groups.add(group1)

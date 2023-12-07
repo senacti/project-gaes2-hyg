@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.contrib import messages
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth import login
@@ -27,12 +28,26 @@ def nosotros(request):
 
 
 def dashboard_administrador(request):
+    # Verificar si el usuario pertenece al grupo correcto
+    if not request.user.groups.filter(name='Empleados').exists():
+        # Si no pertenece al grupo adecuado, redirigir a la página de inicio o mostrar un error
+        # Puedes cambiar 'inicio' con la URL que desees
+        return redirect('inicio')
+
+    # El usuario pertenece al grupo correcto, continuar con el procesamiento normal
     return render(request, 'DashboardAdmin.html', {
         # context
     })
 
 
 def dashboard_cliente(request):
+    # Verificar si el usuario pertenece al grupo correcto
+    if not request.user.groups.filter(name='Clientes').exists():
+        # Si no pertenece al grupo adecuado, redirigir a la página de inicio o mostrar un error
+        # Puedes cambiar 'inicio' con la URL que desees
+        return redirect('inicio')
+
+    # El usuario pertenece al grupo correcto, continuar con el procesamiento normal
     return render(request, 'DashboardClient.html', {
         # context
     })
@@ -43,16 +58,25 @@ def login_view(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
+
         if user:
             login(request, user)
             messages.success(request, 'Bienvenido {}'.format(user.username))
-            return redirect('admin:index')
+
+            # Verificar el grupo y redirigir según el grupo
+            if user.groups.filter(name='Administradores').exists():
+                # Redirección para administradores
+                return redirect('admin:index')
+            elif user.groups.filter(name='Empleados').exists():
+                # Redirección para empleados
+                return redirect('dashboard_administrador')
+            elif user.groups.filter(name='Clientes').exists():
+                # Redirección para clientes
+                return redirect('dashboard_cliente')
         else:
             messages.error(request, 'Usuario o contraseña incorrectos')
-    return render(request, 'login.html',
-                  {
 
-                  })
+    return render(request, 'login.html', {})
 
 
 def registro(request):
