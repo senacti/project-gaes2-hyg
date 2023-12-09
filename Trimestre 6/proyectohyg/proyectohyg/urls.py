@@ -21,9 +21,13 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from products.views import ProductListView
+from django.urls import include
 
 
 urlpatterns = [
+    path('productos/', include('products.urls')),
+    path('catalogo/', ProductListView.as_view(), name='catalogo'),
     path('admin/', admin.site.urls, name='admin:index'),
     path('', views.inicio, name='inicio'),
     path('contacto/', views.contacto, name='contacto'),

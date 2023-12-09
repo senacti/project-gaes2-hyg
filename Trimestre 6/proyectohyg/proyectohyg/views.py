@@ -27,6 +27,17 @@ def nosotros(request):
     })
 
 
+def Catalogo(request):
+
+    products = Product.objects.all().order_by('-id')
+
+    return render(request, 'catalogo.html', {
+        'message': 'Listado de productos',
+        'title': 'Productos',
+        'products': products,
+    })
+
+
 def dashboard_administrador(request):
     # Verificar si el usuario pertenece al grupo correcto
     if not request.user.groups.filter(name='Empleados').exists():

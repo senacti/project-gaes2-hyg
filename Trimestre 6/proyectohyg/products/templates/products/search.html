@@ -1,0 +1,18 @@
+{% comment %} {% extends "../layouts/plantillaindex.html" %}
+
+{% block content %}
+<div class="col">
+  {% include 'products/snippets/search.html' with query=query %}
+  <hr>
+  <p>Resultados para: {{ query }} ( {{ count }})</p>
+
+    {% for product in products %}
+        <div class="col-3 mt-5">
+
+            {% include 'products/snippets/product.html' %}
+
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %} {% endcomment %}
