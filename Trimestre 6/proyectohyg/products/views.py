@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -31,13 +33,9 @@ class ProductDetailView(DetailView):
 
 class ProductSearchListView(ListView):
     template_name = 'products/search.html'
-    # context_object_name = 'products'
 
     def get_queryset(self):
-        return Product.objects.filter(title__icontains=self.query())
-        # filters = Q(title__icontains=self.query()) | Q(
-        #     category__title__icontains=self.query())
-        # return Product.objects.filter(filters)
+        return Product.objects.filter(title=self.query())
 
     def query(self):
         return self.request.GET.get('q')
@@ -45,6 +43,6 @@ class ProductSearchListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['query'] = self.query()
-        context['count'] = context['product_list'].count()
 
+        # print(context)
         return context
