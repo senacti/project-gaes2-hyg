@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'import_export',
     'products',
+    'categories',
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
