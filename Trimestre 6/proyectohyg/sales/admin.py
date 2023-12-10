@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.forms import ModelForm
+from .models import DetalleVenta
 from django.http import HttpResponse
 from .models import Products,Venta, DetalleVenta,Cliente
 from import_export import resources
@@ -8,27 +10,23 @@ from reportlab.lib.pagesizes import letter, landscape
 from datetime import datetime
 from reportlab.lib import colors
 from reportlab.lib.utils import simpleSplit
-from django.forms import ModelForm
-from .models import DetalleVenta
+
+class DetalleVentaAdminForm(ModelForm):
+    class Meta:
+        model = DetalleVenta
+        fields = '__all__'
 
 
 class DetalleVentaInline(admin.TabularInline):
     model = DetalleVenta
-    extra = 3
-    readonly_fields = ('subtotal',)
-
-
+    extra = 1
 
 
 @admin.register(Venta)
-class VentaAdmin(admin.ModelAdmin):
+class VentaAdmin(ImportExportModelAdmin):
     inlines = [DetalleVentaInline]
-    list_display = ('id', 'cliente', 'fecha', 'total')
-    
-    
-    class Media:
-      
-        js = ('sales/admin/js/admin.js',)  # Ajusta 'tuapp' según tu configuración
+    list_display = ('cliente', 'fecha', 'total')
+    actions = ['generate_pdf']
     
     class VencimientoResource(resources.ModelResource):
         class Meta:
@@ -113,10 +111,14 @@ class VentaAdmin(admin.ModelAdmin):
 
 @admin.register(DetalleVenta)
 class DetalleVentaAdmin(admin.ModelAdmin):
+    form = DetalleVentaAdminForm
     list_display = ('id', 'venta', 'producto', 'cantidad', 'subtotal')
-    search_fields = ['venta__cliente__nombre', 'producto__nombre'] 
+    search_fields = ['venta__cliente__nombre', 'producto__nombre']
 
-
+    readonly_fields = ('producto', 'cantidad', 'subtotal')
+    
+    class Media:
+        js = ('sales/admin/js/admin.js',)
 
 
 @admin.register(Cliente)
