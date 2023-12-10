@@ -44,10 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hyg',
     'sales',
-    'cart',
     'user.apps.UserConfig',
     'import_export',
+    'products',
+    'categories',
+    'carts',
 ]
+
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
@@ -148,10 +151,11 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media files
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = (
     os.path.join(BASE_DIR, 'media'),
 )
+
 
 AUTH_USER_MODEL = 'user.CustomUser'
 

@@ -21,9 +21,14 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from products.views import ProductListView
+from django.urls import include
 
 
 urlpatterns = [
+    path('carrito/', include('carts.urls')),
+    path('productos/', include('products.urls')),
+    path('catalogo/', ProductListView.as_view(), name='catalogo'),
     path('admin/', admin.site.urls, name='admin:index'),
     path('', views.inicio, name='inicio'),
     path('contacto/', views.contacto, name='contacto'),
@@ -31,7 +36,7 @@ urlpatterns = [
     path('dashboardAdmin/', views.dashboard_administrador,
          name='dashboard_administrador'),
     path('dashboardClient/', views.dashboard_cliente, name='dashboard_cliente'),
-    path('login', views.login_view, name='login'),
+    path('accounts/login/', views.login_view, name='login'),
     path('registro/', views.registro, name='registro'),
     path('logout/', views.logout_view, name='logout'),
     path('reset_password/', auth_views.PasswordResetView.as_view(),
@@ -42,6 +47,7 @@ urlpatterns = [
          name='password_reset_confirm'),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
+    path('catalogo2/', views.catalogoC_view, name='Catalogo2'),
 ]
 
 if settings.DEBUG:

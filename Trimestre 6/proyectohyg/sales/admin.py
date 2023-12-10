@@ -8,17 +8,27 @@ from reportlab.lib.pagesizes import letter, landscape
 from datetime import datetime
 from reportlab.lib import colors
 from reportlab.lib.utils import simpleSplit
+from django.forms import ModelForm
+from .models import DetalleVenta
 
 
 class DetalleVentaInline(admin.TabularInline):
     model = DetalleVenta
+    extra = 3
+    readonly_fields = ('subtotal',)
+
+
 
 
 @admin.register(Venta)
-class VentaAdmin(ImportExportModelAdmin):
+class VentaAdmin(admin.ModelAdmin):
     inlines = [DetalleVentaInline]
-    list_display = ('cliente', 'fecha', 'total')
-    actions = ['generate_pdf']
+    list_display = ('id', 'cliente', 'fecha', 'total')
+    
+    
+    class Media:
+      
+        js = ('sales/admin/js/admin.js',)  # Ajusta 'tuapp' según tu configuración
     
     class VencimientoResource(resources.ModelResource):
         class Meta:
@@ -103,11 +113,11 @@ class VentaAdmin(ImportExportModelAdmin):
 
 @admin.register(DetalleVenta)
 class DetalleVentaAdmin(admin.ModelAdmin):
-    list_display = ['id', 'venta', 'producto', 'cantidad', 'subtotal']
-    readonly_fields = ['subtotal']
+    list_display = ('id', 'venta', 'producto', 'cantidad', 'subtotal')
+    search_fields = ['venta__cliente__nombre', 'producto__nombre'] 
 
-    def mostrar_subtotal(self, obj):
-            return obj.subtotal
+
+
 
 @admin.register(Cliente)
 class ClienteAdmin(admin.ModelAdmin):

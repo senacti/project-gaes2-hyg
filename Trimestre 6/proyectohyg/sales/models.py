@@ -15,9 +15,15 @@ class Cliente(models.Model):
 
 
 class Venta(models.Model):
-    cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     fecha = models.DateField()
-    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # Establecer un valor predeterminado
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+    def calcular_total(self):
+        detalles = DetalleVenta.objects.filter(venta=self)
+        total = sum(detalle.subtotal for detalle in detalles)
+        self.total = total
+        self.save()
 
     def __str__(self):
         return f"Venta {self.id} - Cliente: {self.cliente.nombre}"
@@ -26,30 +32,17 @@ class DetalleVenta(models.Model):
     venta = models.ForeignKey(Venta, on_delete=models.CASCADE)
     producto = models.ForeignKey(Products, on_delete=models.CASCADE)
     cantidad = models.IntegerField() 
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2, default=0, editable=False,)
-   
+    subtotal = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def save(self, *args, **kwargs):
-        # Calcula el subtotal al guardar el objeto si no se ha proporcionado manualmente
-        if not self.subtotal:
-            self.subtotal = self.producto.price * self.cantidad if self.producto else 0
+        # Calcular el subtotal al guardar el detalle de venta
+        self.subtotal = self.producto.price * self.cantidad
         super().save(*args, **kwargs)
 
+        # Actualizar el total de la venta asociada
+        self.venta.calcular_total()
+
     def __str__(self):
-        return f"DetalleVenta {self.id} - Venta: {self.venta.id}, Producto: {self.producto.name}, Subtotal: {self.subtotal}"
-    
-
-@receiver(post_save, sender=DetalleVenta)
-def actualizar_venta(sender, instance, **kwargs):
-    # Calcula el subtotal del detalle
-    instance.subtotal = instance.producto.price * instance.cantidad
-    instance.save()
-
-    # Actualiza el total de la venta
-    venta = instance.venta
-    detalles = DetalleVenta.objects.filter(venta=venta)
-    venta.total = sum(detalle.subtotal for detalle in detalles)
-    venta.save()
-            
+        return f"Detalle Venta {self.id} - Producto: {self.producto.name}, Cantidad: {self.cantidad}, Subtotal: {self.subtotal}"
             
 

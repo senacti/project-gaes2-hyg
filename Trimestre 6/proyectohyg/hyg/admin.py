@@ -12,15 +12,21 @@ from reportlab.lib.utils import simpleSplit
 
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(ImportExportModelAdmin):
     list_display = ('name', 'description',)
     list_editable = ('description',)
+
+
+class CategoryResource(resources.ModelResource):
+    class Meta:
+        model = Category
+        fields = ('name', 'description')
 
 
 @admin.register(Products)
 class ProductsAdmin(ImportExportModelAdmin):
     list_display = ('code', 'name', 'price', 'amount',
-                    'category', 'expiration_date',)
+                    'category', 'expiration_date','show_image',)
     list_editable = ('price',)
     search_fields = ('name',)
     list_filter = ('category',)
@@ -123,6 +129,13 @@ class ProductsAdmin(ImportExportModelAdmin):
         p.save()
 
         return response
+
+class ProductsResource(resources.ModelResource):
+    class Meta:
+        model = Products
+        fields = ('code', 'name', 'price', 'amount',
+                  'category', 'expiration_date',)
+
 
 @admin.register(Compra)
 class CompraAdmin(ImportExportModelAdmin):
@@ -344,6 +357,13 @@ class GastosAdmin(ImportExportModelAdmin):
         p.save()
 
         return response
+
+class CompraResource(resources.ModelResource):
+    class Meta:
+        model = Compra
+        fields = ('id', 'supplier', 'product', 'datec',
+                  'amountc', 'pricec', 'description',)
+
 
 @admin.register(Suppliers)
 class SuppliersAdmin(ImportExportModelAdmin):
