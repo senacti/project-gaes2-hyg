@@ -4,5 +4,5 @@ register = template.Library()
 
 
 @register.filter()
-def price_fromat(value):
+def price_format(value):
     return '${0:2f}'.format(value)
