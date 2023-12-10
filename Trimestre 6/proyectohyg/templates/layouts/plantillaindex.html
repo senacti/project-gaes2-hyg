@@ -1,5 +1,5 @@
 {% load static %}
-
+{% url 'carts:cart' as cart %}
 <!DOCTYPE html>
 
 <head>
@@ -40,9 +40,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'catalogo' %}">Catalogo</a>
                     </li>
+                    <li class="nav-item  {% if request.path == cart%}active{% endif %}">
+                        <a class="nav-link" href="{{ cart }}">
+                          Carrito <span class="fas fa-shopping-cart"></span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
+
+        <div>
+            <ul></ul>
+        <div/>
         <div>
             <a class="btn btn-outline-primary" href="{% url 'login' %}">INICIO <br> DE SESIÓN</a>
         </div>

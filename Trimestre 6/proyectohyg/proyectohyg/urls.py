@@ -26,6 +26,7 @@ from django.urls import include
 
 
 urlpatterns = [
+    path('carrito/', include('carts.urls')),
     path('productos/', include('products.urls')),
     path('catalogo/', ProductListView.as_view(), name='catalogo'),
     path('admin/', admin.site.urls, name='admin:index'),

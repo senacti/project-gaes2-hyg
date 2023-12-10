@@ -44,11 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hyg',
     'sales',
-    'cart',
     'user.apps.UserConfig',
     'import_export',
     'products',
     'categories',
+    'carts',
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
