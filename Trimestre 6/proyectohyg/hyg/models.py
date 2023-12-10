@@ -27,13 +27,13 @@ class Products(models.Model):
     # Atributo de fecha de vencimiento
     expiration_date = models.DateField(null=True)
     status = models.CharField(max_length=50, null=True)
-    # image = models.ImageField(upload_to='media', null=True, blank=True)
+    image = models.ImageField(upload_to='media', null=True, blank=True)
 
     def __str__(self):
         return self.name  # Mantén el nombre del campo como "name"
 
-    # def show_image(self):
-    #     return format_html('<img src={} width="100" /> ', self.image.url)
+    def show_image(self):
+        return format_html('<img src={} width="100" /> ', self.image.url)
 
     class Meta:
         verbose_name = 'Producto'

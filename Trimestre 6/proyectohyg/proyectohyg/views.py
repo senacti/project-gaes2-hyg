@@ -107,3 +107,6 @@ def logout_view(request):
     logout(request)
     messages.success(request, 'Sesión finalizada')
     return redirect('login')
+
+def catalogoC_view(request):
+    return render(request, 'catalogoC.html')

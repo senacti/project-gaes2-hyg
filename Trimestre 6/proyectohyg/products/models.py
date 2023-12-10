@@ -11,6 +11,8 @@ class Product(models.Model):
     slug = models.SlugField(null=False, blank=False, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='products/', null=False, blank=False)
+    expiration_date = models.DateField(null=True)
+    status = models.CharField(max_length=50, null=True)
 
     # def save(self, *args, **kwargs):
     #     self.slug = slugify(self.title)

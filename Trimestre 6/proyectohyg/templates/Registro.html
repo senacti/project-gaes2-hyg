@@ -25,11 +25,19 @@
         </nav>
 </header>
 <main>
-  <form method="post" action="{% url 'registro' %}">
+  <form method="post" action="{% url 'registro' %}" class="container needs-validation" style="margin: 0 auto;">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Registrar</button>
-  </form>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="form-outline">
+                {{ form.as_p }}
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+</form>
+
+
 </main>
 
 <script src="validacionRegistros.js"></script>
