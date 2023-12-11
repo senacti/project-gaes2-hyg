@@ -110,3 +110,38 @@ def logout_view(request):
 
 def catalogoC_view(request):
     return render(request, 'catalogoC.html')
+
+def Granos_view(request):
+    
+    if not request.user.groups.filter(name='Clientes').exists():
+        # Si no pertenece al grupo adecuado, redirigir a la página de inicio o mostrar un error
+        # Puedes cambiar 'inicio' con la URL que desees
+        return redirect('inicio')
+    
+    return render(request, 'granos.html')
+def mascotas_view(request):
+    if not request.user.groups.filter(name='Clientes').exists():
+        # Si no pertenece al grupo adecuado, redirigir a la página de inicio o mostrar un error
+        # Puedes cambiar 'inicio' con la URL que desees
+        return redirect('login')
+    return render(request, 'AlimentoMacostas.html')
+def Bebidas(request):
+    if not request.user.groups.filter(name='Clientes').exists():
+        # Si no pertenece al grupo adecuado, redirigir a la página de inicio o mostrar un error
+        # Puedes cambiar 'inicio' con la URL que desees
+        return redirect('login')
+    return render(request, 'Bebidas.html')
+def lacteos(request):
+    if not request.user.groups.filter(name='Clientes').exists():
+        # Si no pertenece al grupo adecuado, redirigir a la página de inicio o mostrar un error
+        # Puedes cambiar 'inicio' con la URL que desees
+        return redirect('login')
+    return render(request, 'lacteos.html')
+def enlatados_view(request):
+    if not request.user.groups.filter(name='Clientes').exists():
+        # Si no pertenece al grupo adecuado, redirigir a la página de inicio o mostrar un error
+        # Puedes cambiar 'inicio' con la URL que desees
+        return redirect('login')
+    return render(request, 'enlatados.html')
+
+

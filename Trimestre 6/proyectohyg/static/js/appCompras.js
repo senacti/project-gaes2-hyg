@@ -11,10 +11,10 @@ iconoMenu.addEventListener('click', (e) => {
     const rutaActual = e.target.getAttribute('src');
 
     if(rutaActual == 'img/open-menu.png'){
-        e.target.setAttribute('src','./../Iconos/HamburguerSinFondo.png');
+        e.target.setAttribute('src','/Iconos/HamburguerSinFondo.png');
         // e.target.setAttribute('src','./../Iconos/LogoAzul.jpg');
     }else{
-        e.target.setAttribute('src','./../Iconos/HamburguerSinFondo.png');
+        e.target.setAttribute('src','/Iconos/HamburguerSinFondo.png');
         // e.target.setAttribute('src','./../Iconos/LogoAzul.jpg');
     }
 });

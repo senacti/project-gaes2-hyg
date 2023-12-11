@@ -46,19 +46,18 @@
                 <strong>CATALOGO</strong> 
                 <ul>
                     
-                    <li><a href="">Despensa  </a></li>
-                    <li><a href="">Lácteos, Huevos, Refrigerar</a></li>
-                    <li><a href="">Bebidas  </a></li>
-                    <li><a href="">Limpieza </a></li>
-                    <li><a href="">Cuidado Personal </a></li>
-                    <li><a href="">Pasabocas y dulces </a></li>
-                    <li><a href="">Producto para Mascotas</a> </li>
+                    <li><a href="{% url 'granos' %}">Granos y Endulzantes </a></li>
+                    <li><a href="{% url 'lacteos' %}">Productos lácteos</a></li>
+                    <li><a href="{% url 'enlatados' %}">	Alimentos enlatados </a></li>
+                    <li><a href="{% url 'bebidas' %}">Bebidas</a></li>
+                    <li><a href="{% url 'mascotas' %}">Alimentos para mascotas </a></li>
+
                 </ul>
             </li>
             <li>
-                <strong>HISTORIAL DE PEDIDOS</strong>
+                
                 <ul>
-                    <li><a href="">ver pedidos </a></li>
+                    <li><a href="{% url 'logout' %}">Cerrar Sesion </a></li>
                 </ul>
             </li>
         
@@ -66,7 +65,9 @@
         </div>
     </header>
     
-    {% block content %}{% endblock %}
+    <main class="container-fluid">
+        {% block content %}{% endblock %}
+    </main >
 
 <script src="{% static 'js/validacionFormularios.js' %}"></script>
 <script src="{% static 'js/appCompras.js' %}"></script>
@@ -74,7 +75,45 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script >
+        let mostrador = document.getElementById("mostrador");
+        let seleccion = document.getElementById("seleccion");
+        let imgSeleccionada = document.getElementById("img");
+        let modeloSeleccionado = document.getElementById("modelo");
+        let descripSeleccionada = document.getElementById("descripcion");
+        let precioSeleccionado = document.getElementById("precio");
 
+        function cargar(item){
+            quitarBordes();
+            mostrador.style.width = "60%";
+            seleccion.style.width = "40%";
+            seleccion.style.opacity = "1";
+            item.style.border = "2px solid red";
+
+            imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
+
+            modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
+
+            descripSeleccionada.innerHTML = "Descripción del modelo ";
+
+            precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
+
+
+        }
+        function cerrar(){
+            mostrador.style.width = "100%";
+            seleccion.style.width = "0%";
+            seleccion.style.opacity = "0";
+            quitarBordes();
+        }
+        function quitarBordes(){
+            var items = document.getElementsByClassName("item");
+            for(i=0;i <items.length; i++){
+                items[i].style.border = "none";
+            }
+        }
+
+    </script>
 </body>
 
 </html>

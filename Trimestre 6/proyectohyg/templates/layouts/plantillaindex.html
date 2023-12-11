@@ -40,13 +40,13 @@
                         <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'catalogo' %}">Catalogo</a>
+                        <a class="nav-link" href="{% url 'Catalogo2' %}">Catalogo</a>
                     </li>
-                    <li class="nav-item  {% if request.path == cart%}active{% endif %}">
+                    <!-- <li class="nav-item  {% if request.path == cart%}active{% endif %}">
                         <a class="nav-link" href="{{ cart }}">
                           Carrito <span class="fas fa-shopping-cart"></span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -116,8 +116,20 @@
                 items[i].style.border = "none";
             }
         }
+        
 
     </script>
+<script>
+   
+    function agregarAlCarrito() {
+       // Puedes realizar aquí cualquier lógica adicional antes de mostrar el mensaje
+ 
+       // Muestra un cuadro de mensaje (box message)
+       alert("El producto fue agregado correctamente al carrito.");
+ 
+       // Puedes agregar más acciones aquí, como enviar el producto al servidor, etc.
+     }
+ </script>
 
 </body>
 <footer class="footer">

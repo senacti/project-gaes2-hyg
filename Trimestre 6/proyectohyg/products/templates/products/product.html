@@ -1,26 +1,8 @@
-{% extends 'templates/layouts/plantillaindex.html' %}
+{% extends '../layouts/plantillaindex.html' %}
 {% load static %}
 {% block title %}contacto{% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-<div class="col-3">
-    {% if product.image %}
-        <img src="{{ product.image.url }}" alt="Imagen del producto" width="200" height="200">
-    {% endif %}
-    <div clas="h1">{{ product.title }}</div>
-    <div class="h5 font-weigth-bold">
-        Precio: <span  class+"text-danger">${{product.price}}</span>
-    </div>
-    <div clas="">
-        {{ product.description }}
-    </div>
-    <div clas="">
-18      {% include 'carts/snippets/add.html' %}
-    </div>
-</div>
-=======
->>>>>>> 4b29d6e4084584b326a28f57f56daa22b66e8a00
 
     <div class="col-md-4">
         {% if product.image %}

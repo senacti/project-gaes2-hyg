@@ -48,6 +48,12 @@ urlpatterns = [
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
     path('catalogo2/', views.catalogoC_view, name='Catalogo2'),
+    path('granos/', views.Granos_view, name='granos'),
+    path('Bebidas/', views.Bebidas, name='bebidas'),
+    path('Lacteos/', views.lacteos, name='lacteos'),
+    path('mascotas/', views.mascotas_view, name='mascotas'),
+    path('enlatados/', views.enlatados_view, name='enlatados'),
+
 ]
 
 if settings.DEBUG:
